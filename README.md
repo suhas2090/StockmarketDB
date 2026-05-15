@@ -1,47 +1,36 @@
-# DALAL.AI — Indian Stock Market Dashboard
-A single-page dashboard for Indian equity markets with live Nifty/Bank Nifty/Sensex, market breadth, option chain, DCF valuation, market regime classification, and earnings calendar.
-## Features
-- **Live Indices** — Nifty, Bank Nifty, Sensex, VIX, USD/INR, Gold, Crude, G-Sec
-- **Market Breadth** — A/D ratio, advance/decline counts, 52-week highs/lows
-- **Option Chain** — PCR, max pain, OI buildup, support/resistance levels
-- **DCF Valuation** — Two-stage discounted cash flow with sensitivity tables, Monte Carlo simulation, and scenario analysis for 8 Nifty stocks
-- **Market Regime Engine** — Multi-factor classification (breadth, volatility, momentum, smart money, trend, cross-asset) with continuous scoring
-- **Earnings Calendar** — Upcoming earnings, macro events, and IPOs with impact prediction
-- **Latest Intelligence** — Live RSS news feeds from ET Markets, Moneycontrol, Livemint, etc.
-- **Sector Heatmap** — Real-time sector performance visualization
-- **Market Mood Index** — VIX-based sentiment gauge
-- **FII/DII Data** — Foreign and domestic institutional flow tracking
-- **AI Analysis** — Groq-powered market research assistant (requires API key)
-## Deployment
-Two components need to be deployed:
-### 1. Cloudflare Worker (backend API)
-Upload `worker.js` to Cloudflare Workers as a free worker.
-1. Go to https://dash.cloudflare.com → Workers & Pages → Create Worker
-2. Name it `dalal-prices` (or update the URL in `index.html` CONFIG block)
-3. Paste the entire `worker.js` code → Deploy
-### 2. Cloudflare Pages (frontend)
-Upload `index.html` (and the `styles/` and `js/` folders if present) to Cloudflare Pages as a static site.
-1. Go to https://dash.cloudflare.com → Workers & Pages → Create → Pages
-2. Upload the files or connect a git repository
-3. No build command needed (it's a static HTML file)
-### Configuration
-In `index.html`, find the `CONFIG` block (around line 4200):
+# DALAL.AI — Indian Market Intelligence Platform
+
+Single-page application for real-time Indian stock market analysis with AI-powered research, FII/DII tracking, options chain, DCF valuation, scenario simulation, and supply chain risk mapping.
+
+Built as a static HTML/CSS/JS frontend that talks to a Cloudflare Worker (Yahoo Finance proxy + NSE scraper + RSS aggregator) and optionally to Groq (LLaMA 3.3 70B) and Alpha Vantage APIs.
+
+## Architecture
+
 ```
-WORKER_URL: "https://dalal-prices.your-name.workers.dev",
+Browser (index.html)
+ ├── Cloudflare Worker ─── Yahoo Finance (prices, indices, macros)
+ │                      ├── NSE India (option chain, breadth, PCR)
+ │                      ├── Groq API (AI summaries)
+ │                      ├── RSS feeds (news aggregation)
+ │                      └── ForexFactory (economic calendar)
+ ├── Groq API (direct) ──── D.AI research, Scenario AI, Supply Chain AI
+ ├── Alpha Vantage ──────── Macro indicators (CPI, GDP, Fed rate, crude)
+ ├── MrChartist API ─────── FII/DII institutional flow data
+ └── localStorage ───────── Watchlist, API keys, CPI overrides, FPI cache
 ```
-Update this to match your worker's URL. The GROQ_API_KEY is optional — without it, AI chat and scenario analysis won't work.
-## Data Sources
-- **Yahoo Finance** — Stock prices, indices, 52-week highs/lows
-- **NSE India** — Option chain, PCR (only during market hours, 9:15 AM - 3:30 PM IST)
-- **RSS Feeds** — ET Markets, Moneycontrol, Livemint, Business Standard Markets, NSE India
-- **Yahoo Finance Calendar** — Earnings events
-## Limitations & Flaws
-- NSE option chain data is only available during market hours (NSE blocks API access outside trading hours)
-- Free API proxies can be unreliable — some data may fail to load on first attempt
-- DCF valuations are simplified estimates using public data, not professional research
-- Market regime classification uses heuristic thresholds and may not capture all market conditions
-- No authentication — anyone with the URL can access the dashboard
-- Cloudflare Worker free plan has 100k requests/day limit
-- This is a side project, not a financial advisory tool. Verify all data before making trading decisions.
-## Disclaimer
-This tool is for educational and informational purposes only. It does not constitute investment advice. Always verify data from official sources. The creators are not responsible for any financial losses incurred using this tool.
+
+## Setup
+
+1. Deploy `worker.js` to Cloudflare Workers (free tier works)
+2. Set `WORKER_URL` in `js/config.js` to your worker URL
+3. (Optional) Add a Groq API key via the in-app modal for AI features
+4. (Optional) Add an Alpha Vantage API key for CPI/GDP/fed rate macros
+5. Serve `index.html` from any static host (no build step needed)
+
+## Tech Stack
+
+- **Frontend:** Single-file HTML (vanilla JS, CSS Grid/Flexbox, SVG)
+- **Backend:** Cloudflare Workers (Yahoo Finance proxy, NSE scraper)
+- **AI:** Groq API (Llama 3.3 70B) for research, scenario analysis
+- **Data:** Yahoo Finance, NSE India, RSS feeds, Alpha Vantage
+- **Visualization:** Canvas (charts), D3.js (3D globe), SVG (gauges)
