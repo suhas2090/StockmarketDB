@@ -547,7 +547,7 @@ function computeMarketPulse(breadth, niftyChgPct, vix) {
 }
 async function handleSymbols(symbolsParam, corsHeaders) {
   const syms = symbolsParam.split(',').map(s => s.trim().toUpperCase()).filter(Boolean);
-  const ySyms = syms.map(s => YAHOO_SYMBOLS[s] || (s.includes('.') ? s : s + '.NS'));
+  const ySyms = syms.map(s => YAHOO_SYMBOLS[s] || (s.includes('.') || s.includes('=') || s.includes('^') || s.includes(':') ? s : s + '.NS'));
   const results = await batchFetch(ySyms, 5, 100);
   const output = {};
   for (let i = 0; i < syms.length; i++) {
@@ -628,6 +628,116 @@ async function handleNews(corsHeaders) {
     });
   }
 }
+async function fetchCalendarFX() {
+  try {
+    const res = await fetch('https://www.forexfactory.com/calendar', {
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
+      cf: { cacheTtl: 3600, cacheEverything: true }
+    });
+    if (!res.ok) return [];
+    const html = await res.text();
+    return parseForexfactoryHTML(html);
+  } catch (e) {
+    return [];
+  }
+}
+
+function parseForexfactoryHTML(html) {
+  const events = [];
+  let currentDate = null;
+  const rows = html.split(/<tr\s/);
+  for (const row of rows) {
+    const dayMatch = row.match(/calendar__row--day-header[^>]*>[\s\S]*?calendar__day-header[^>]*>([^<]+)</);
+    if (dayMatch) {
+      const raw = dayMatch[1].replace(/<[^>]+>/g, '').trim();
+      const d = new Date(raw);
+      if (!isNaN(d.getTime())) { currentDate = d; }
+      continue;
+    }
+    if (row.includes('calendar__row--event')) {
+      const currency = (row.match(/calendar__currency[^>]*>([^<]+)</) || [])[1] || '';
+      let importance = 'LOW';
+      if (row.includes('icon--red')) importance = 'HIGH';
+      else if (row.includes('icon--orange')) importance = 'MEDIUM';
+      const eventName = ((row.match(/calendar__event[^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/) || [])[1] || '').trim();
+      if (!eventName || !currentDate) continue;
+      const timeMatch = row.match(/calendar__time[^>]*>([^<]+)</);
+      let eventDate = new Date(currentDate);
+      if (timeMatch) {
+        const t = timeMatch[1].trim().toLowerCase().replace(/\s/g, '');
+        const isPM = t.includes('pm');
+        let parts = t.replace(/[ap]m/, '').split(':');
+        let h = parseInt(parts[0]) || 0, m = parseInt(parts[1]) || 0;
+        if (isPM && h !== 12) h += 12;
+        if (!isPM && h === 12) h = 0;
+        eventDate.setHours(h, m, 0);
+      }
+      const impactPred = importance === 'HIGH' ? 'BULLISH' : importance === 'MEDIUM' ? 'NEUTRAL' : null;
+      events.push({
+        date: eventDate.toISOString(),
+        company: eventName,
+        type: 'MACRO',
+        importance,
+        impactPrediction: impactPred,
+        currency,
+      });
+    }
+  }
+  return events;
+}
+
+async function fetchYahooEarnings() {
+  try {
+    const today = new Date();
+    const startDate = new Date(today.getFullYear(), today.getMonth(), 1);
+    const endDate = new Date(today.getFullYear(), today.getMonth() + 2, 0);
+    const from = Math.floor(startDate.getTime() / 1000);
+    const to = Math.floor(endDate.getTime() / 1000);
+    const url = `https://query1.finance.yahoo.com/v1/finance/calendar/earnings?period1=${from}&period2=${to}`;
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; DalalAI/1.0)', 'Accept': 'application/json' },
+      cf: { cacheTtl: 3600, cacheEverything: true }
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    const earnings = data?.data?.rows || data?.calendarEvents?.earnings || [];
+    return earnings.map(e => ({
+      date: e.start || e.earningsDate || e.date || today.toISOString().split('T')[0],
+      company: e.symbol || e.ticker || e.name || 'Unknown',
+      type: 'EARNINGS',
+      importance: estimateImportance(e.symbol || ''),
+      eps: e.epsEstimate || e.estimatedEPS || null,
+      revenue: e.revenueEstimate || null,
+      impactPrediction: null,
+    }));
+  } catch (e) {
+    return [];
+  }
+}
+
+function estimateImportance(symbol) {
+  const highImpact = ['RELIANCE','TCS','HDFCBANK','INFY','ICICIBANK','HINDUNILVR','ITC','SBIN','BHARTIARTL','LT','WIPRO','HCLTECH','ASIANPAINT','AXISBANK','BAJFINANCE','MARUTI','SUNPHARMA','TITAN','NTPC','POWERGRID','KOTAKBANK','ULTRACEMCO','BAJAJFINSV','TATASTEEL','ADANIPORTS','ONGC','NESTLEIND','M&M','JSWSTEEL','TECHM'];
+  const medImpact = ['INDUSINDBK','SBILIFE','ICICIPRU','DIVISLAB','EICHERMOT','DRREDDY','CIPLA','GRASIM','SHREECEM','COALINDIA','BRITANNIA','TATACONSUM','HINDALCO','BPCL','IOC','HEROMOTOCO','GAIL','TRENT','DMART','PIDILITIND','DABUR','GODREJCP','HAVELLS','COLPAL','MARICO','BANDHANBNK','PEL','BOSCHLTD','ZOMATO','LICI'];
+  if (highImpact.includes(symbol.toUpperCase())) return 'HIGH';
+  if (medImpact.includes(symbol.toUpperCase())) return 'MEDIUM';
+  return 'LOW';
+}
+
+async function handleCalendar(corsHeaders) {
+  try {
+    const [macroEvents, earningsEvents] = await Promise.all([
+      fetchCalendarFX(),
+      fetchYahooEarnings(),
+    ]);
+    const allEvents = [...macroEvents, ...earningsEvents].sort((a, b) => new Date(a.date) - new Date(b.date));
+    return new Response(JSON.stringify({ events: allEvents }), {
+      headers: { ...corsHeaders, 'Cache-Control': 'public, max-age=1800' }
+    });
+  } catch (e) {
+    return new Response(JSON.stringify({ events: [] }), { headers: corsHeaders });
+  }
+}
+
 async function handleMMI(corsHeaders) {
   try {
     const vix = await yahooFetch('^INDIAVIX');
@@ -712,6 +822,7 @@ export default {
     if (url.pathname === '/api/optionchain') return handleOptionChain(corsHeaders);
     if (params.get('symbols')) return handleSymbols(params.get('symbols'), corsHeaders);
     if (params.get('news')) return handleNews(corsHeaders);
+    if (params.get('calendar')) return handleCalendar(corsHeaders);
     if (params.get('mmi')) return handleMMI(corsHeaders);
     if (params.get('fiidii')) return handleFIIDII(corsHeaders);
     if (params.get('fpi')) return handleFIIDII(corsHeaders);
@@ -720,6 +831,7 @@ export default {
       try { if (request.method === 'POST') body = await request.json(); } catch (e) {}
       return handleGroqAI(body, corsHeaders);
     }
-    return new Response(JSON.stringify({ error: 'No route matched', available: ['/api/dashboard', '/api/ticker', '/api/macro', '/api/optionchain', '?symbols=', '?news=1', '?mmi=1', '?fiidii=1', '?ai=1'] }), { status: 400, headers: corsHeaders });
+    return new Response(JSON.stringify({ error: 'No route matched', available: ['/api/dashboard', '/api/ticker', '/api/macro', '/api/optionchain', '?symbols=', '?news=1', '?calendar=1', '?mmi=1', '?fiidii=1', '?ai=1'] }), { status: 400, headers: corsHeaders });
   }
 };
+
