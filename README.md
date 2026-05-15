@@ -15,7 +15,7 @@ Browser (index.html)
  │                      └── ForexFactory (economic calendar)
  ├── Groq API (direct) ──── D.AI research, Scenario AI, Supply Chain AI
  ├── Alpha Vantage ──────── Macro indicators (CPI, GDP, Fed rate, crude)
- ├── MrChartist API ─────── FII/DII institutional flow data
+ ├                           FII/DII institutional flow data
  └── localStorage ───────── Watchlist, API keys, CPI overrides, FPI cache
 ```
 
