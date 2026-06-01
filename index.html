@@ -402,12 +402,12 @@
 
   .tick-item {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-size: 13px;
     display: flex;
-    gap: 8px;
+    gap: 10px;
     align-items: center;
     cursor: pointer;
-    padding: 4px 8px;
+    padding: 6px 10px;
     border-radius: 6px;
     transition: all 0.2s;
     border: 1px solid transparent;
@@ -435,74 +435,6 @@
     font-weight: 600;
   }
   
-  /* Blended News Ticker */
-  .news-ticker {
-    flex: 1;
-    overflow: hidden;
-    position: relative;
-    background: linear-gradient(90deg, rgba(255,107,0,0.08) 0%, rgba(255,107,0,0.03) 50%, rgba(255,107,0,0.08) 100%);
-    border-bottom: 1px solid rgba(255,107,0,0.1);
-    padding: 6px 0;
-  }
-  
-  .news-ticker-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    color: var(--saffron);
-    font-weight: 600;
-    padding: 0 16px;
-    border-right: 1px solid rgba(255,107,0,0.15);
-    display: flex;
-    align-items: center;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background: rgba(255,107,0,0.1);
-  }
-  
-  .news-ticker-inner {
-    display: flex;
-    gap: 40px;
-    animation: newsticker 60s linear infinite;
-    white-space: nowrap;
-  }
-  
-  .news-ticker-inner:hover { animation-play-state: paused; }
-  
-  @keyframes newsticker {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  
-  .news-tick-item {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    display: flex;
-    gap: 6px;
-    align-items: center;
-    cursor: pointer;
-    padding: 2px 4px;
-    border-radius: 4px;
-    transition: background 0.2s;
-  }
-  
-  .news-tick-item:hover { background: rgba(255,107,0,0.15); }
-  
-  .news-tick-source {
-    color: var(--saffron);
-    font-weight: 600;
-  }
-  
-  .news-tick-title {
-    color: var(--text);
-    max-width: 300px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .news-tick-time {
-    color: var(--muted);
-    font-size: 9px;
-  }
 
   .header-right {
     display: flex;
@@ -645,7 +577,7 @@
     margin-bottom: 8px;
   }
 
-  .index-name { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .index-name { font-size: 10px; font-weight: 700; color: var(--text); margin-bottom: 4px; letter-spacing: 1.2px; }
 
   .index-val {
     font-family: 'Playfair Display', serif;
@@ -1217,24 +1149,26 @@
   
   .macro-card-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    color: var(--muted);
-    letter-spacing: 1px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.8px;
     margin-bottom: 4px;
   }
   
   .macro-card-value {
     font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 800;
     color: var(--saffron);
   }
   
   .macro-card-desc {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 8px;
+    font-size: 9px;
+    font-weight: 600;
     color: var(--muted);
-    margin-top: 2px;
+    margin-top: 3px;
   }
 
   .fii-bar-wrap { display: flex; flex-direction: column; gap: 8px; }
@@ -1244,11 +1178,11 @@
   /* ── PREMIUM FII/DII CARD STYLES ── */
 
   .fiidii-premium-card {
-    background: linear-gradient(145deg, rgba(19,19,31,0.95) 0%, rgba(15,15,26,0.98) 100%);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px;
+    background: linear-gradient(145deg, #0d0d1a 0%, #0a0a14 100%);
+    border: 1px solid rgba(100,181,246,0.12);
+    border-radius: 12px;
     padding: 20px 22px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.03) inset;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(100,181,246,0.06) inset;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -1260,18 +1194,18 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 30% 40%, rgba(100,181,246,0.03) 0%, transparent 60%),
-                radial-gradient(circle at 70% 60%, rgba(255,215,0,0.02) 0%, transparent 60%);
+    background: radial-gradient(circle at 30% 40%, rgba(100,181,246,0.05) 0%, transparent 60%),
+                radial-gradient(circle at 70% 60%, rgba(255,215,0,0.03) 0%, transparent 60%);
     pointer-events: none;
   }
 
   .fiidii-sub-card {
     position: relative;
-    background: linear-gradient(135deg, rgba(20,20,35,0.9) 0%, rgba(15,15,26,0.95) 100%);
-    border-radius: 14px;
+    background: linear-gradient(135deg, #111122 0%, #0d0d1a 100%);
+    border-radius: 10px;
     padding: 16px 18px;
-    border: 1px solid rgba(255,255,255,0.05);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.07);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.02) inset;
     transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
     overflow: hidden;
   }
@@ -1282,27 +1216,27 @@
     left: 0;
     bottom: 0;
     width: 3px;
-    border-radius: 14px 0 0 14px;
+    border-radius: 10px 0 0 10px;
   }
   .fiidii-sub-card.fii::before { background: linear-gradient(180deg, #64B5F6, #1E88E5); box-shadow: 0 0 12px rgba(100,181,246,0.3); }
   .fiidii-sub-card.dii::before { background: linear-gradient(180deg, #FFD700, #FFA000); box-shadow: 0 0 12px rgba(255,215,0,0.3); }
   .fiidii-sub-card:hover {
     transform: translateY(-2px);
-    border-color: rgba(255,255,255,0.1);
+    border-color: rgba(100,181,246,0.2);
     box-shadow: 0 8px 30px rgba(0,0,0,0.35);
   }
 
   .fiidii-bar-bg {
     flex: 1;
-    height: 14px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 7px;
+    height: 18px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
     overflow: hidden;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+    box-shadow: inset 0 1px 4px rgba(0,0,0,0.4);
   }
   .fiidii-bar {
     height: 100%;
-    border-radius: 7px;
+    border-radius: 4px;
     transition: width 0.6s cubic-bezier(0.34,1.56,0.64,1);
     position: relative;
     overflow: hidden;
@@ -1311,13 +1245,13 @@
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
     animation: fiidiiShimmer 2s infinite;
   }
-  .fiidii-bar.fii-up { background: linear-gradient(90deg, #00C853, #00E676); box-shadow: 0 0 10px rgba(0,200,83,0.3); }
-  .fiidii-bar.fii-down { background: linear-gradient(90deg, #FF1744, #FF5252); box-shadow: 0 0 10px rgba(255,23,68,0.3); }
-  .fiidii-bar.dii-up { background: linear-gradient(90deg, #FFD700, #FFEA00); box-shadow: 0 0 10px rgba(255,215,0,0.3); }
-  .fiidii-bar.dii-down { background: linear-gradient(90deg, #FF1744, #FF5252); box-shadow: 0 0 10px rgba(255,23,68,0.3); }
+  .fiidii-bar.fii-up { background: linear-gradient(90deg, #089981, #00C853); box-shadow: 0 0 12px rgba(8,153,129,0.4); }
+  .fiidii-bar.fii-down { background: linear-gradient(90deg, #E03B3B, #FF5252); box-shadow: 0 0 12px rgba(224,59,59,0.4); }
+  .fiidii-bar.dii-up { background: linear-gradient(90deg, #FFD700, #FFEA00); box-shadow: 0 0 12px rgba(255,215,0,0.4); }
+  .fiidii-bar.dii-down { background: linear-gradient(90deg, #E03B3B, #FF5252); box-shadow: 0 0 12px rgba(224,59,59,0.4); }
 
   @keyframes fiidiiShimmer {
     0% { transform: translateX(-100%); }
@@ -1326,16 +1260,16 @@
 
   .fiidii-val {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 800;
-    width: 100px;
+    width: 110px;
     text-align: right;
     flex-shrink: 0;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
   }
-  .fiidii-val.up { color: var(--green); text-shadow: 0 0 20px rgba(0,200,83,0.3); }
-  .fiidii-val.down { color: var(--red); text-shadow: 0 0 20px rgba(255,23,68,0.3); }
+  .fiidii-val.up { color: #089981; text-shadow: 0 0 20px rgba(8,153,129,0.4); }
+  .fiidii-val.down { color: #E03B3B; text-shadow: 0 0 20px rgba(224,59,59,0.4); }
   .fiidii-val.neutral { color: var(--muted); }
 
   .fiidii-live-dot {
@@ -1343,8 +1277,8 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--green);
-    box-shadow: 0 0 10px rgba(0,200,83,0.6);
+    background: #089981;
+    box-shadow: 0 0 10px rgba(8,153,129,0.6);
     animation: fiidiiLivePulse 1.5s ease-in-out infinite;
     margin-right: 5px;
     vertical-align: middle;
@@ -1581,8 +1515,8 @@
     flex-shrink: 0;
   }
   .module-hdr-left { display: flex; flex-direction: column; gap: 3px; }
-  .module-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; display: flex; align-items: center; gap: 10px; }
-  .module-sub { font-size: 10px; color: var(--muted); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.5px; }
+  .module-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; display: flex; align-items: center; gap: 10px; }
+  .module-sub { font-size: 12px; font-weight: 600; color: var(--muted); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.5px; }
   .module-close {
     background: var(--border); border: none; border-radius: 6px;
     color: var(--text); font-size: 15px; width: 32px; height: 32px;
@@ -1592,16 +1526,16 @@
     display: flex; flex: 1; overflow: hidden;
   }
   .module-sidebar {
-    width: 300px; min-width: 300px; border-right: 1px solid var(--border);
-    background: var(--surface); overflow-y: auto; padding: 16px;
-    display: flex; flex-direction: column; gap: 14px;
+    width: 320px; min-width: 320px; border-right: 1px solid var(--border);
+    background: var(--surface); overflow-y: auto; padding: 12px;
+    display: flex; flex-direction: column; gap: 10px;
   }
   .module-main {
     flex: 1; overflow-y: auto; padding: 20px 24px; display: flex; flex-direction: column; gap: 16px;
   }
   .mod-label {
-    font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px;
-    color: var(--muted); text-transform: uppercase; margin-bottom: 8px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    color: var(--text); text-transform: uppercase; margin-bottom: 6px;
   }
   .mod-panel {
     background: var(--panel); border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
@@ -1610,17 +1544,17 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 10px 14px; border-bottom: 1px solid var(--border);
     background: rgba(255,255,255,0.02);
-    font-size: 12px; font-weight: 600;
+    font-size: 14px; font-weight: 700;
   }
   .mod-panel-body { padding: 14px; }
 
   /* ── SLIDERS / INPUTS ── */
-  .sim-slider-group { display: flex; flex-direction: column; gap: 12px; }
-  .sim-slider-row { display: flex; flex-direction: column; gap: 5px; }
+  .sim-slider-group { display: flex; flex-direction: column; gap: 8px; }
+  .sim-slider-row { display: flex; flex-direction: column; gap: 4px; }
   .sim-slider-top { display: flex; justify-content: space-between; align-items: center; }
-  .sim-slider-label { font-size: 11px; color: var(--text); }
+  .sim-slider-label { font-size: 13px; font-weight: 700; color: var(--text); }
   .sim-slider-val {
-    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700;
     padding: 2px 7px; border-radius: 4px; background: var(--border); color: var(--text);
     min-width: 52px; text-align: center;
   }
@@ -1641,9 +1575,9 @@
   .sim-range.green::-webkit-slider-thumb { background: var(--green); box-shadow: 0 0 6px rgba(0,200,83,0.5); }
 
   .run-btn {
-    width: 100%; padding: 11px; border: none; border-radius: 8px;
+    width: 100%; padding: 9px; border: none; border-radius: 8px;
     font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700;
-    letter-spacing: 1px; cursor: pointer; transition: all 0.2s; margin-top: 4px;
+    letter-spacing: 1px; cursor: pointer; transition: all 0.2s; margin-top: 2px;
   }
   .run-btn.purple { background: #7C5CFC; color: #fff; box-shadow: 0 0 14px rgba(124,92,252,0.4); }
   .run-btn.purple:hover { box-shadow: 0 0 24px rgba(124,92,252,0.6); transform: translateY(-1px); }
@@ -1701,73 +1635,79 @@
 
   /* ── SUPPLY CHAIN ── */
   #scNetworkCanvas { width: 100%; border-radius: 8px; background: var(--ink); display: block; }
-  .sc-node-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
-  .sc-legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
-  .sc-legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
   .sc-risk-row {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 8px 12px; border-bottom: 1px solid rgba(30,30,50,0.5);
+    padding: 10px 14px; border-bottom: 1px solid rgba(30,30,50,0.5);
+    transition: background 0.15s;
   }
+  .sc-risk-row:hover { background: rgba(255,255,255,0.02); }
   .sc-risk-row:last-child { border-bottom: none; }
-  .sc-risk-name { font-size: 12px; color: var(--text); }
-  .sc-risk-region { font-size: 9px; color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-top: 2px; }
+  .sc-risk-name { font-size: 13px; font-weight: 700; color: var(--text); }
+  .sc-risk-region { font-size: 10px; font-weight: 600; color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-top: 2px; }
   .sc-risk-score {
-    font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700;
-    padding: 3px 8px; border-radius: 5px;
+    font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700;
+    padding: 4px 10px; border-radius: 6px;
   }
   .sc-alert {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 10px 12px; border-radius: 7px; margin-bottom: 8px;
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 14px; border-radius: 8px; margin-bottom: 8px;
     border-left: 3px solid;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   }
-  .sc-alert.high { background: rgba(255,23,68,0.07); border-color: var(--red); }
-  .sc-alert.medium { background: rgba(255,215,0,0.07); border-color: var(--gold); }
-  .sc-alert.low { background: rgba(0,200,83,0.07); border-color: var(--green); }
-  .sc-alert-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
-  .sc-alert-text { font-size: 11px; line-height: 1.45; color: var(--text); }
-  .sc-alert-meta { font-size: 9px; color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-top: 3px; }
+  .sc-alert.high { background: rgba(255,23,68,0.08); border-color: var(--red); }
+  .sc-alert.medium { background: rgba(255,215,0,0.08); border-color: var(--gold); }
+  .sc-alert.low { background: rgba(0,200,83,0.08); border-color: var(--green); }
+  .sc-alert-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+  .sc-alert-text { font-size: 13px; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .sc-alert-meta { font-size: 10px; font-weight: 600; color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-top: 3px; }
 
   .geo-heatmap-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
   }
   .geo-cell {
-    padding: 10px 8px; border-radius: 6px; text-align: center;
+    padding: 14px 10px; border-radius: 10px; text-align: center;
     transition: all 0.3s; cursor: pointer; border: 1px solid transparent;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   }
-  .geo-cell:hover { border-color: rgba(255,255,255,0.15); transform: scale(1.03); }
-  .geo-cell-flag { font-size: 18px; margin-bottom: 3px; }
-  .geo-cell-name { font-size: 9px; color: rgba(255,255,255,0.7); font-family: 'JetBrains Mono', monospace; margin-bottom: 2px; }
-  .geo-cell-score { font-size: 13px; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
-  .geo-cell-label { font-size: 8px; margin-top: 2px; opacity: 0.8; }
+  .geo-cell:hover { border-color: rgba(255,255,255,0.2); transform: scale(1.05); box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+  .geo-cell-flag { font-size: 22px; margin-bottom: 4px; }
+  .geo-cell-name { font-size: 11px; font-weight: 700; color: var(--text); font-family: 'JetBrains Mono', monospace; margin-bottom: 3px; letter-spacing: 0.3px; }
+  .geo-cell-score { font-size: 16px; font-weight: 800; font-family: 'JetBrains Mono', monospace; }
+  .geo-cell-label { font-size: 9px; font-weight: 700; margin-top: 3px; letter-spacing: 0.5px; }
 
-  .dep-tree { display: flex; flex-direction: column; gap: 8px; }
+  .dep-tree { display: flex; flex-direction: column; gap: 10px; }
   .dep-parent {
-    background: rgba(0,188,212,0.1); border: 1px solid rgba(0,188,212,0.3);
-    border-radius: 7px; padding: 9px 12px;
+    background: linear-gradient(135deg, rgba(0,188,212,0.12), rgba(0,188,212,0.04));
+    border: 1px solid rgba(0,188,212,0.3);
+    border-radius: 10px; padding: 12px 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
-  .dep-parent-name { font-size: 12px; font-weight: 600; color: #00BCD4; }
-  .dep-parent-meta { font-size: 9px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
-  .dep-children { display: flex; flex-direction: column; gap: 5px; margin-top: 8px; margin-left: 16px; }
+  .dep-parent-name { font-size: 14px; font-weight: 700; color: #00BCD4; letter-spacing: 0.3px; }
+  .dep-parent-meta { font-size: 10px; font-weight: 600; color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-top: 2px; }
+  .dep-children { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; margin-left: 20px; }
   .dep-child {
     background: var(--ink); border: 1px solid var(--border);
-    border-left: 3px solid; border-radius: 5px; padding: 7px 10px;
+    border-left: 3px solid; border-radius: 8px; padding: 10px 14px;
     display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.2s;
   }
+  .dep-child:hover { border-color: rgba(255,255,255,0.12); transform: translateX(3px); }
   .dep-child.tier1 { border-left-color: var(--saffron); }
   .dep-child.tier2 { border-left-color: var(--gold); }
   .dep-child.tier3 { border-left-color: var(--green); }
-  .dep-child-name { font-size: 11px; color: var(--text); }
-  .dep-child-detail { font-size: 9px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
-  .dep-child-risk { font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 2px 7px; border-radius: 4px; }
+  .dep-child-name { font-size: 13px; font-weight: 700; color: var(--text); }
+  .dep-child-detail { font-size: 10px; font-weight: 600; color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-top: 2px; }
+  .dep-child-risk { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 6px; }
 
-  .sc-company-filter { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+  .sc-company-filter { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
   .sc-co-chip {
-    font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 4px 9px;
-    border-radius: 4px; border: 1px solid var(--border); color: var(--muted);
-    cursor: pointer; transition: all 0.15s;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 7px 12px;
+    border-radius: 6px; border: 1px solid var(--border); color: var(--text); background: rgba(255,255,255,0.03);
+    cursor: pointer; transition: all 0.2s; letter-spacing: 0.3px;
   }
-  .sc-co-chip:hover { border-color: #00BCD4; color: #00BCD4; }
-  .sc-co-chip.active { background: rgba(0,188,212,0.12); border-color: #00BCD4; color: #00BCD4; }
+  .sc-co-chip:hover { border-color: #00BCD4; color: #00BCD4; background: rgba(0,188,212,0.08); }
+  .sc-co-chip.active { background: rgba(0,188,212,0.14); border-color: #00BCD4; color: #00BCD4; box-shadow: 0 0 16px rgba(0,188,212,0.15); }
+  .scenario-overlay .sc-co-chip.active { background: rgba(124,92,252,0.14); border-color: #7C5CFC; color: #7C5CFC; box-shadow: 0 0 16px rgba(124,92,252,0.15); }
 
   /* Scenario comparison table */
   .scenario-compare { width: 100%; border-collapse: collapse; font-size: 11px; }
@@ -1881,8 +1821,8 @@
   .mnp-headline-item:last-child { border-bottom: none; }
   .mnp-headline-item:hover { background: var(--border); }
   .mnp-hl-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--saffron); flex-shrink: 0; margin-top: 6px; }
-  .mnp-hl-text { font-size: 12px; color: var(--text); line-height: 1.45; flex: 1; }
-  .mnp-hl-time { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); white-space: nowrap; margin-top: 2px; }
+  .mnp-hl-text { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.55; flex: 1; }
+  .mnp-hl-time { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); white-space: nowrap; margin-top: 3px; }
   .mnp-headline-loading { padding: 16px; font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
 
   /* ── D.AI BUTTON ── */
@@ -1985,16 +1925,24 @@
 
   /* Heatmap Grid */
   .fiidii-heatmap-grid {
-    display: grid; grid-template-columns: repeat(15, 1fr); gap: 3px; margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 6px;
   }
   .fiidii-hcell {
-    padding: 8px 4px; border-radius: 6px; text-align: center;
-    font-size: 9px; font-family: 'JetBrains Mono', monospace;
-    transition: all 0.2s ease; cursor: pointer; border: 1px solid transparent;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    cursor: default;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border: 1px solid transparent;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
   }
-  .fiidii-hcell:hover { transform: scale(1.15); z-index: 5; border-color: rgba(255,255,255,0.2); }
+  .fiidii-hcell:hover { transform: scale(1.2); z-index: 5; border-color: rgba(255,255,255,0.3); box-shadow: 0 0 16px rgba(255,255,255,0.1); }
   .fiidii-hcell .hc-name { font-size: 7px; opacity: 0.7; margin-bottom: 2px; }
-  .fiidii-hcell .hc-val { font-size: 10px; font-weight: 600; }
+  .fiidii-hcell .hc-val { font-size: 10px; font-weight: 700; }
 
   /* FII/DII Charts */
   .fiidii-chart-wrap {
@@ -2065,7 +2013,7 @@
   @media (max-width: 768px) {
     .fiidii-body { flex-direction: column; }
     .fiidii-sidebar { width: 100%; min-width: unset; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); max-height: 200px; }
-    .fiidii-heatmap-grid { grid-template-columns: repeat(10, 1fr); }
+    .fiidii-heatmap-grid { grid-template-columns: repeat(9, 1fr); }
   }
 
   /* ── D.AI FULL-SCREEN OVERLAY ── */
@@ -3592,7 +3540,7 @@
         <span class="cmd-text">Search...</span>
         <span class="cmd-shortcut">⌘K</span>
       </button>
-      <div class="data-pill" id="istTime">IST --:--</div>
+      <div class="data-pill" id="istTime">--:--</div>
       <button class="dai-btn" onclick="openDAI()">◈ D.AI</button>
     </div>
   </nav>
@@ -3605,13 +3553,6 @@
   </div>
 </div>
 
-<!-- News Ticker Below -->
-<div class="news-ticker" style="display:flex;align-items:center">
-  <div class="news-ticker-label">📰 BREAKING</div>
-  <div style="flex:1;overflow:hidden;padding:0 8px">
-    <div class="news-ticker-inner" id="newsTickerInner"><span style="color:var(--muted);padding:0 20px;font-size:10px">Loading news...</span></div>
-  </div>
-</div>
 
 <script>
   // Navigation dropdown
@@ -3707,9 +3648,9 @@
     <div class="sidebar-section">
       <div class="sidebar-label" style="display:flex;align-items:center;justify-content:space-between">
         <span>Indices</span>
-        <span onclick="openGlobeIndices()" title="Global Indices Globe" style="cursor:pointer;font-size:11px;font-family:'JetBrains Mono',monospace;color:#64B5F6;border:1px solid rgba(100,181,246,0.4);padding:2px 7px;border-radius:4px;letter-spacing:0.5px;transition:all 0.15s;background:rgba(100,181,246,0.06)"
-          onmouseover="this.style.background='rgba(100,181,246,0.18)';this.style.color='#90CAF9'"
-          onmouseout="this.style.background='rgba(100,181,246,0.06)';this.style.color='#64B5F6'">🌐 GLOBAL</span>
+        <span onclick="openGlobeIndices()" title="Global Indices Globe" style="cursor:pointer;font-size:11px;font-family:'JetBrains Mono',monospace;color:#90CAF9;border:1px solid rgba(100,181,246,0.5);padding:3px 9px;border-radius:5px;letter-spacing:0.8px;font-weight:700;transition:all 0.2s;background:rgba(100,181,246,0.1);box-shadow:0 0 14px rgba(100,181,246,0.2)"
+          onmouseover="this.style.background='rgba(100,181,246,0.2)';this.style.boxShadow='0 0 22px rgba(100,181,246,0.4)'"
+          onmouseout="this.style.background='rgba(100,181,246,0.1)';this.style.boxShadow='0 0 14px rgba(100,181,246,0.2)'">🌐 GLOBAL</span>
       </div>
       <div class="index-card">
         <div class="index-name">NIFTY 50</div>
@@ -3787,7 +3728,7 @@
       <div class="chart-panel-header" style="flex-wrap:wrap;gap:6px">
         <div style="display:flex;align-items:center;gap:10px">
           <button onclick="toggleMarketBreadth()" id="mbToggleBtn" style="background:none;border:none;color:var(--saffron);cursor:pointer;font-size:14px;padding:2px 6px;margin-right:4px">▼</button>
-          <span style="font-family:'Playfair Display',serif;font-size:15px;font-weight:900;color:var(--text)">MARKET BREADTH</span>
+          <span style="font-family:'Playfair Display',serif;font-size:19px;font-weight:900;color:var(--saffron)">MARKET BREADTH</span>
           <span id="mbStatusBadge" style="font-family:'JetBrains Mono',monospace;font-size:9px;padding:2px 8px;border-radius:10px;border:1px solid var(--green);color:var(--green);background:rgba(0,200,83,0.08)">LIVE</span>
           <span id="mbLastUpdated" style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)"></span>
         </div>
@@ -3825,7 +3766,7 @@
 
             <!-- Advance/Decline -->
             <div style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:13px 14px;position:relative;overflow:hidden">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px">ADVANCE / DECLINE <span title="Core market breadth metric: number of NSE stocks advancing vs declining in the last session. A/D ratio > 1 indicates broad participation (healthy); < 1 suggests narrow leadership or weakness. Calculated from real-time NSE 50-stock price changes." style="cursor:help;font-size:9px;color:var(--saffron);opacity:0.7">ⓘ</span></div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1.2px;color:var(--text);margin-bottom:8px">ADVANCE / DECLINE <span title="Core market breadth metric: number of NSE stocks advancing vs declining in the last session. A/D ratio > 1 indicates broad participation (healthy); < 1 suggests narrow leadership or weakness. Calculated from real-time NSE 50-stock price changes." style="cursor:help;font-size:10px;color:var(--saffron);opacity:0.7">ⓘ</span></div>
               <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:6px">
                 <span id="mbAdv" style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--green)">—</span>
                 <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)">/</span>
@@ -3839,7 +3780,7 @@
 
             <!-- 52-Week -->
             <div style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:13px 14px">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px">52W HIGH / LOW</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1.2px;color:var(--text);margin-bottom:8px">52W HIGH / LOW</div>
               <div style="display:flex;gap:14px;margin-bottom:6px">
                 <div>
                   <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--green)" id="mb52H">—</div>
@@ -3853,9 +3794,9 @@
               <div id="mb52Signal" style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">—</div>
             </div>
 
-            <!-- PCR / Sentiment -->
+            <!-- PCR / Sentiment (sourced from FII/DII data) -->
             <div style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:13px 14px">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px">PUT/CALL RATIO</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1.2px;color:var(--text);margin-bottom:8px">PUT/CALL RATIO <span style="font-size:7px;color:var(--muted);letter-spacing:0.5px;font-weight:400">FII/DII</span></div>
               <div id="mbPCR" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold);margin-bottom:4px">—</div>
               <div id="mbPCRLabel" style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">—</div>
               <div style="height:4px;background:var(--border);border-radius:2px;margin-top:6px;overflow:hidden">
@@ -3865,7 +3806,7 @@
 
             <!-- Market Pulse Score -->
             <div id="mbPulseCard" style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:13px 14px">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--muted);margin-bottom:8px">BREADTH PULSE</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1.2px;color:var(--text);margin-bottom:8px">BREADTH PULSE</div>
               <div id="mbPulseScore" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--green);margin-bottom:4px">—</div>
               <div id="mbPulseLabel" style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">COMPUTING…</div>
             </div>
@@ -3877,7 +3818,7 @@
 
             <!-- Index A/D -->
             <div style="background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:13px 14px">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--muted);margin-bottom:10px">INDEX ADVANCE/DECLINE <span title="Per-index breakdown of advancing vs declining stocks within each major index (NIFTY 50, BANK NIFTY, etc). Shows which indices have broad-based participation vs narrow leadership. Calculated from real-time NSE 50-stock constituent feed." style="cursor:help;font-size:9px;color:var(--saffron);opacity:0.7">ⓘ</span></div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1.2px;color:var(--text);margin-bottom:10px">INDEX ADVANCE/DECLINE <span title="Per-index breakdown of advancing vs declining stocks within each major index (NIFTY 50, BANK NIFTY, etc). Shows which indices have broad-based participation vs narrow leadership. Calculated from real-time NSE 50-stock constituent feed." style="cursor:help;font-size:10px;color:var(--saffron);opacity:0.7">ⓘ</span></div>
               <div id="mbIndexAD" style="display:flex;flex-direction:column;gap:7px"></div>
             </div>
 
@@ -3921,80 +3862,13 @@
 
     </div>
 
-    <!-- ② TOOL CARDS: SCENARIO + SUPPLY CHAIN -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px">
-
-      <!-- SCENARIO CARD -->
-      <div onclick="openScenario()" style="background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:all 0.25s;display:flex;flex-direction:column" onmouseover="this.style.borderColor='#7C5CFC';this.style.boxShadow='0 0 28px rgba(124,92,252,0.3)'" onmouseout="this.style.borderColor='';this.style.boxShadow=''">
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:6px">
-          <div style="display:flex;align-items:center;gap:12px">
-            <span style="font-family:'Playfair Display',serif;font-size:17px;font-weight:900;color:var(--text);letter-spacing:-0.3px">⚡ SCENARIO</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:9px;padding:3px 12px;border-radius:20px;font-weight:700;letter-spacing:0.8px;background:rgba(124,92,252,0.15);color:#7C5CFC;border:1px solid rgba(124,92,252,0.35)">MACRO IMPACT</span>
-          </div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);opacity:0.6">Click to open →</div>
-        </div>
-        <div style="padding:18px 18px;display:flex;flex-direction:column;gap:10px;flex:1">
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
-            <div style="background:var(--ink);border:1px solid var(--border);border-radius:10px;padding:14px 10px;text-align:center">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Presets</div>
-              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#7C5CFC;margin-top:4px">5</div>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted)">scenarios</div>
-            </div>
-            <div style="background:var(--ink);border:1px solid var(--border);border-radius:10px;padding:14px 10px;text-align:center">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Variables</div>
-              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#00C853;margin-top:4px">6</div>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted)">macro inputs</div>
-            </div>
-            <div style="background:var(--ink);border:1px solid var(--border);border-radius:10px;padding:14px 10px;text-align:center">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Impact</div>
-              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#FF6D00;margin-top:4px">AI</div>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted)">powered</div>
-            </div>
-          </div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);text-align:center;padding:6px 0 2px 0">Model macroeconomic shocks · Sector heatmap · Portfolio stress test</div>
-        </div>
-      </div>
-
-      <!-- SUPPLY CHAIN CARD -->
-      <div onclick="openSupplyChain()" style="background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:all 0.25s;display:flex;flex-direction:column" onmouseover="this.style.borderColor='#00BCD4';this.style.boxShadow='0 0 28px rgba(0,188,212,0.3)'" onmouseout="this.style.borderColor='';this.style.boxShadow=''">
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:6px">
-          <div style="display:flex;align-items:center;gap:12px">
-            <span style="font-family:'Playfair Display',serif;font-size:17px;font-weight:900;color:var(--text);letter-spacing:-0.3px">🔗 SUPPLY CHAIN</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:9px;padding:3px 12px;border-radius:20px;font-weight:700;letter-spacing:0.8px;background:rgba(0,188,212,0.15);color:#00BCD4;border:1px solid rgba(0,188,212,0.35)">RISK MAP</span>
-          </div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);opacity:0.6">Click to open →</div>
-        </div>
-        <div style="padding:18px 18px;display:flex;flex-direction:column;gap:10px;flex:1">
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
-            <div style="background:var(--ink);border:1px solid var(--border);border-radius:10px;padding:14px 10px;text-align:center">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Companies</div>
-              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#00BCD4;margin-top:4px">12</div>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted)">in coverage</div>
-            </div>
-            <div style="background:var(--ink);border:1px solid var(--border);border-radius:10px;padding:14px 10px;text-align:center">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Risk Score</div>
-              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#FF6D00;margin-top:4px">—</div>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted)">overall</div>
-            </div>
-            <div style="background:var(--ink);border:1px solid var(--border);border-radius:10px;padding:14px 10px;text-align:center">
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1px;color:var(--muted);text-transform:uppercase">Analysis</div>
-              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#00BCD4;margin-top:4px">AI</div>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted)">powered</div>
-            </div>
-          </div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);text-align:center;padding:6px 0 2px 0;border-top:1px solid var(--border);margin-top:4px">Geopolitical dependencies · Commodity exposure · Supplier concentration</div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ③ FII/DII TRACKER — Premium -->
+    <!-- ③ FII/DII TRACKER — Premium (below Market Breadth) -->
     <div class="chart-panel" id="fiidiiPanel" style="margin-top:14px;cursor:pointer" onclick="openFiiDiiOverlay()">
       <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,0.04)">
         <div style="display:flex;align-items:center;gap:14px">
           <div style="display:flex;align-items:center;gap:3px">
             <span style="font-size:16px;line-height:1">📊</span>
-            <span style="font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:var(--text);letter-spacing:0.3px">FII/DII TRACKER</span>
+            <span style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--green);letter-spacing:0.3px">FII/DII TRACKER</span>
           </div>
           <span id="fiidiiStatusBadge" style="font-family:'JetBrains Mono',monospace;font-size:9px;padding:4px 12px;border-radius:20px;border:1px solid rgba(0,200,83,0.25);color:var(--green);background:rgba(0,200,83,0.08);display:flex;align-items:center;gap:5px">
             <span class="fiidii-live-dot"></span>LIVE
@@ -4047,6 +3921,73 @@
       </div>
     </div>
 
+    <!-- ② TOOL CARDS: SCENARIO + SUPPLY CHAIN -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px">
+
+      <!-- SCENARIO CARD -->
+      <div onclick="openScenario()" style="background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:all 0.25s;display:flex;flex-direction:column" onmouseover="this.style.borderColor='#7C5CFC';this.style.boxShadow='0 0 28px rgba(124,92,252,0.3)'" onmouseout="this.style.borderColor='';this.style.boxShadow=''">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:6px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--text);letter-spacing:0px">⚡ SCENARIO SIMULATOR</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:9px;padding:3px 12px;border-radius:20px;font-weight:600;letter-spacing:0.6px;background:rgba(124,92,252,0.12);color:#7C5CFC;border:1px solid rgba(124,92,252,0.25)">MACRO IMPACT</span>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);opacity:0.6">Click to open →</div>
+        </div>
+        <div style="padding:18px 18px;display:flex;flex-direction:column;gap:10px;flex:1">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+            <div style="background:var(--ink);border:1px solid var(--border);border-radius:10px;padding:14px 10px;text-align:center">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:1px;color:var(--text);text-transform:uppercase">Presets</div>
+              <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:800;color:#7C5CFC;margin-top:4px">5</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--muted)">scenarios</div>
+            </div>
+            <div style="background:var(--ink);border:1px solid var(--border);border-radius:10px;padding:14px 10px;text-align:center">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--text);text-transform:uppercase">Variables</div>
+              <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:800;color:#00C853;margin-top:4px">6</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--muted)">macro inputs</div>
+            </div>
+            <div style="background:var(--ink);border:1px solid var(--border);border-radius:10px;padding:14px 10px;text-align:center">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--text);text-transform:uppercase">Impact</div>
+              <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:800;color:#FF6D00;margin-top:4px">AI</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--muted)">powered</div>
+            </div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);text-align:center;padding:6px 0 2px 0">Model macroeconomic shocks · Sector heatmap · Portfolio stress test</div>
+        </div>
+      </div>
+
+      <!-- SUPPLY CHAIN CARD -->
+      <div onclick="openSupplyChain()" style="background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;transition:all 0.25s;display:flex;flex-direction:column" onmouseover="this.style.borderColor='#00BCD4';this.style.boxShadow='0 0 28px rgba(0,188,212,0.3)'" onmouseout="this.style.borderColor='';this.style.boxShadow=''">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:6px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <span style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--text);letter-spacing:0px">🔗 SUPPLY CHAIN</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:9px;padding:3px 12px;border-radius:20px;font-weight:600;letter-spacing:0.6px;background:rgba(0,188,212,0.12);color:#00BCD4;border:1px solid rgba(0,188,212,0.25)">RISK MAP</span>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);opacity:0.6">Click to open →</div>
+        </div>
+        <div style="padding:18px 18px;display:flex;flex-direction:column;gap:10px;flex:1">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+            <div style="background:var(--ink);border:1px solid var(--border);border-radius:10px;padding:14px 10px;text-align:center">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:1px;color:var(--text);text-transform:uppercase">Companies</div>
+              <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:800;color:#00BCD4;margin-top:4px">12</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--muted)">in coverage</div>
+            </div>
+            <div style="background:var(--ink);border:1px solid var(--border);border-radius:10px;padding:14px 10px;text-align:center">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--text);text-transform:uppercase">Risk Score</div>
+              <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:800;color:#FF6D00;margin-top:4px">—</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--muted)">overall</div>
+            </div>
+            <div style="background:var(--ink);border:1px solid var(--border);border-radius:10px;padding:14px 10px;text-align:center">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--text);text-transform:uppercase">Analysis</div>
+              <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:800;color:#00BCD4;margin-top:4px">AI</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--muted)">powered</div>
+            </div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);text-align:center;padding:6px 0 2px 0;border-top:1px solid var(--border);margin-top:4px">Geopolitical dependencies · Commodity exposure · Supplier concentration</div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
   <!-- RIGHT SIDEBAR -->
@@ -4055,8 +3996,8 @@
     <!-- MARKET MOOD INDEX - MOVED TO TOP -->
     <div class="panel-block">
       <div class="pb-label" style="display:flex;align-items:center;justify-content:space-between">
-        <span>Market Mood Index <span title="Market sentiment gauge (0-100) mapped from India VIX levels. VIX < 12 → greed/extreme optimism (score ~75); VIX > 22 → fear/extreme pessimism (score ~25). Reflects options market pricing of expected near-term volatility. Higher score = greed/risk-on; lower score = fear/risk-off." style="cursor:help;font-size:10px;color:var(--saffron);opacity:0.7">ⓘ</span></span>
-        <span style="font-size:8px;color:var(--muted)">Tickertape</span>
+        <span style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--text)">Market Mood <span title="Market sentiment gauge (0-100) mapped from India VIX levels. VIX < 12 → greed/extreme optimism (score ~75); VIX > 22 → fear/extreme pessimism (score ~25). Reflects options market pricing of expected near-term volatility. Higher score = greed/risk-on; lower score = fear/risk-off." style="cursor:help;font-size:10px;color:var(--saffron);opacity:0.7">ⓘ</span></span>
+        <span style="font-size:9px;color:var(--muted)">Tickertape</span>
       </div>
       <div class="mmi-wrap" id="mmiWrap">
         <div class="mmi-gauge-row">
@@ -4086,7 +4027,7 @@
 
     <div class="panel-block news-panel-right">
       <div class="mnp-section-label" style="margin-bottom:8px">
-        <span>📰 Latest Intelligence</span>
+        <span style="font-family:'Playfair Display',serif;font-size:13px;font-weight:900;color:var(--saffron);letter-spacing:0px;white-space:nowrap">📰 Latest Intelligence</span>
         <span id="mnp-refresh-ts" style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)"></span>
       </div>
       <div class="mnp-headlines" id="mnp-headlines">
@@ -4095,7 +4036,7 @@
     </div>
 
     <div class="panel-block" style="background:linear-gradient(135deg, rgba(13,13,26,0.9), rgba(20,20,35,0.9));border:1px solid rgba(255,107,0,0.15);border-radius:14px;padding:16px">
-      <div class="pb-label" style="color:var(--saffron);font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:14px;text-transform:uppercase">📊 Macro Health</div>
+      <div class="pb-label" style="color:var(--saffron);font-size:14px;font-weight:900;letter-spacing:1.5px;margin-bottom:14px;text-transform:uppercase">📊 Macro Health</div>
       
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
         <div class="macro-card">
@@ -4112,11 +4053,11 @@
           <div class="macro-card-desc">$/barrel</div>
         </div>
         
-        <div class="macro-card">
+        <div class="macro-card" style="background:radial-gradient(circle at 50% 40%, rgba(255,215,0,0.12) 0%, rgba(255,215,0,0.02) 60%, transparent 100%);border-color:rgba(255,215,0,0.3);box-shadow:0 0 20px rgba(255,215,0,0.15),inset 0 0 30px rgba(255,215,0,0.05)">
           <div class="macro-card-icon">🥇</div>
-          <div class="macro-card-label">Gold</div>
-          <div class="macro-card-value" id="macro-gold">—</div>
-          <div class="macro-card-desc">MCX ₹/10g</div>
+          <div class="macro-card-label" style="color:var(--gold)">Gold</div>
+          <div class="macro-card-value" id="macro-gold" style="color:#FFD700;text-shadow:0 0 16px rgba(255,215,0,0.4)">—</div>
+          <div class="macro-card-desc" style="color:rgba(255,215,0,0.6)">MCX ₹/10g</div>
         </div>
         
         <div class="macro-card">
@@ -4186,7 +4127,7 @@
   }
   .globe-overlay.open { display: flex; }
   .globe-popup {
-    width: min(1140px, 97vw); height: min(92vh, 820px);
+    width: min(1200px, 97vw); height: min(94vh, 860px);
     background: var(--surface); border: 1px solid var(--border);
     border-radius: 16px; display: flex; flex-direction: column;
     box-shadow: 0 24px 80px rgba(0,0,0,0.8); overflow: hidden;
@@ -4219,34 +4160,19 @@
   .globe-canvas-wrap:active { cursor: grabbing; }
   #globeCanvas { display: block; width: 100%; height: 100%; }
   .globe-sidebar {
-    width: 320px; flex-shrink: 0; border-left: 1px solid var(--border);
+    width: 360px; flex-shrink: 0; border-left: 1px solid var(--border);
     background: var(--surface); display: flex; flex-direction: column;
     overflow: hidden;
   }
   .globe-sidebar-hdr {
-    padding: 10px 14px; border-bottom: 1px solid var(--border);
+    flex-shrink: 0; padding: 10px 14px; border-bottom: 1px solid var(--border);
     font-family: 'JetBrains Mono', monospace; font-size: 9px;
     letter-spacing: 2px; text-transform: uppercase; color: var(--muted);
     display: flex; align-items: center; justify-content: space-between;
   }
   .globe-indices-list {
-    flex: 1; overflow-y: auto; padding: 6px 0;
+    flex: 1; overflow-y: auto; padding: 4px 0;
   }
-  .gi-item {
-    display: flex; align-items: center; gap: 10px;
-    padding: 8px 14px; border-bottom: 1px solid rgba(30,30,50,0.4);
-    cursor: pointer; transition: background 0.15s;
-  }
-  .gi-item:hover { background: var(--border); }
-  .gi-item.selected { background: rgba(100,181,246,0.08); border-left: 2px solid #64B5F6; }
-  .gi-flag { font-size: 18px; flex-shrink: 0; width: 26px; text-align: center; }
-  .gi-info { flex: 1; min-width: 0; }
-  .gi-name { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; color: var(--text); }
-  .gi-region { font-size: 9px; color: var(--muted); }
-  .gi-vals { text-align: right; flex-shrink: 0; }
-  .gi-price { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text); }
-  .gi-chg { font-family: 'JetBrains Mono', monospace; font-size: 10px; }
-  .gi-time { font-size: 8px; color: var(--muted); margin-top: 1px; }
   /* Tooltip on globe */
   .globe-tooltip {
     position: absolute; pointer-events: none;
@@ -4264,12 +4190,12 @@
   .globe-legend {
     padding: 8px 14px; border-top: 1px solid var(--border);
     display: flex; gap: 14px; flex-shrink: 0;
-    font-family: 'JetBrains Mono', monospace; font-size: 9px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600;
   }
   .gl-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 4px; }
   .globe-last-update {
     padding: 6px 14px; border-top: 1px solid var(--border);
-    font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted);
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; color: var(--muted);
     flex-shrink: 0;
   }
 </style>
@@ -4279,7 +4205,7 @@
     <div class="globe-hdr">
       <div>
         <div class="globe-hdr-title">🌐 Global Market Indices</div>
-        <div class="globe-hdr-sub">DRAG TO ROTATE · SCROLL TO ZOOM · HOVER COUNTRY FOR LIVE DATA · 45+ WORLD INDICES</div>
+        <div class="globe-hdr-sub">DRAG TO ROTATE · SCROLL TO ZOOM · HOVER FOR LIVE DATA · 8 MAJOR INDICES</div>
       </div>
       <button class="globe-close" onclick="closeGlobeIndices()" title="Close">✕</button>
     </div>
@@ -4298,13 +4224,13 @@
       </div>
       <div class="globe-sidebar">
         <div class="globe-sidebar-hdr">
-          <span>WORLD INDICES</span>
-          <span id="globeUpdateTs" style="color:var(--green);animation:blink 1.5s infinite">● LIVE</span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:1.5px">MAJOR WORLD INDICES</span>
+          <span id="globeUpdateTs" style="color:var(--green);animation:blink 1.5s infinite;font-size:10px">● LIVE</span>
         </div>
         <!-- Sub-tabs: List | Heatmap -->
-        <div style="display:flex;border-bottom:1px solid var(--border)">
-          <div id="gTab-list" onclick="gSwitchTab('list',this)" style="flex:1;padding:6px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;cursor:pointer;color:#64B5F6;border-bottom:2px solid #64B5F6;background:rgba(100,181,246,0.07)">LIST</div>
-          <div id="gTab-heat" onclick="gSwitchTab('heat',this)" style="flex:1;padding:6px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent">HEATMAP</div>
+        <div style="display:flex;flex-shrink:0;border-bottom:1px solid var(--border)">
+          <div id="gTab-list" onclick="gSwitchTab('list',this)" style="flex:1;padding:8px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;cursor:pointer;color:#64B5F6;border-bottom:2px solid #64B5F6;background:rgba(100,181,246,0.07)">LIST</div>
+          <div id="gTab-heat" onclick="gSwitchTab('heat',this)" style="flex:1;padding:8px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent">GRID</div>
         </div>
         <div class="globe-indices-list" id="globeIndicesList"></div>
         <div id="globeHeatmapWrap" style="display:none;overflow-y:auto;flex:1;padding:10px"></div>
@@ -4641,9 +4567,9 @@ function applyToUI(raw, type) {
     }
 
     // Update timestamp
-    const now = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'});
+    const now = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'}).replace(' ','');
     const tsEl = document.getElementById('macro-updated');
-    if (tsEl) tsEl.textContent = now + ' IST';
+    if (tsEl) tsEl.textContent = now;
   }
 }
 
@@ -4925,7 +4851,7 @@ async function fetchFIIDII() {
       cardBadge.style.background = 'rgba(0,200,83,0.1)';
     }
     const tsEl = document.getElementById('fiidiiLastUpdated');
-    if (tsEl) tsEl.textContent = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'}) + ' IST';
+    if (tsEl) tsEl.textContent = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'}).replace(' ','');
 
     // FPI row
     const fpiEl  = document.getElementById('fii-val');
@@ -4981,7 +4907,7 @@ function updateFiiDiiHomeCard(d) {
     badge.style.background = 'rgba(0,200,83,0.08)';
   }
   const tsEl = document.getElementById('fiidiiLastUpdated');
-  if (tsEl) tsEl.textContent = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'}) + ' IST';
+  if (tsEl) tsEl.textContent = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'});
 
   // Helper to set value + bar
   function setCard(idPrefix, net, barType) {
@@ -5062,7 +4988,7 @@ function updateClock() {
   const h = ist.getHours(), m = ist.getMinutes(), s = ist.getSeconds();
   const ampm = h >= 12 ? 'PM' : 'AM';
   const h12  = h % 12 || 12;
-  const t    = [h12, m, s].map(n => String(n).padStart(2,'0')).join(':') + ' ' + ampm;
+  const t    = [h12, m, s].map(n => String(n).padStart(2,'0')).join(':') + ampm;
   const el   = document.getElementById('istTime');
   if (!el) return;
 
@@ -5076,7 +5002,7 @@ function updateClock() {
   const isPreOpen  = isWeekday && totalMins >= preOpen && totalMins < marketOpen;
   const isPostClose= isWeekday && totalMins >= marketClose && totalMins < marketClose + 60;
 
-  el.textContent = 'IST ' + t;
+  el.textContent = t;
 
   if (isLive) {
     // Green pulse — market is open
@@ -5329,7 +5255,7 @@ async function callClaudeAgent(query, liveData) {
   const b = mb.breadth || {};
   const p = mb.pulse || {};
   const pcr = mb.pcr || {};
-  const liveMacroCtx = `LIVE MACRO & MARKET DATA (${new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'})} IST):
+  const liveMacroCtx = `LIVE MACRO & MARKET DATA (${new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'}).replace(' IST','')}):
 • NIFTY: ${nifty.price ? '₹' + Number(nifty.price).toLocaleString() : 'N/A'} (${nifty.changePct > 0 ? '+' : ''}${nifty.changePct?.toFixed(2) || 'N/A'}%)
 • SENSEX: ${sensex.price ? '₹' + Number(sensex.price).toLocaleString() : 'N/A'} (${sensex.changePct > 0 ? '+' : ''}${sensex.changePct?.toFixed(2) || 'N/A'}%)
 • BANK NIFTY: ${bankNifty.price ? '₹' + Number(bankNifty.price).toLocaleString() : 'N/A'} (${bankNifty.changePct > 0 ? '+' : ''}${bankNifty.changePct?.toFixed(2) || 'N/A'}%)
@@ -5350,7 +5276,7 @@ async function callClaudeAgent(query, liveData) {
 The current market price of ${liveData.sym} has been fetched RIGHT NOW from Yahoo Finance NSE feed.
 YOU MUST USE THIS EXACT PRICE IN YOUR RESPONSE. DO NOT USE YOUR TRAINING DATA PRICE UNDER ANY CIRCUMSTANCES.
 
-LIVE NSE DATA (fetched ${new Date().toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata'})} IST):
+LIVE NSE DATA (fetched ${new Date().toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata'}).replace(' ','')}):
 - NSE Symbol: ${liveData.sym}.NS
 - CURRENT CMP: ₹${liveData.priceStr} ← USE THIS EXACT VALUE IN THE price FIELD
 - Today Change: ${liveData.chgStr} (₹${liveData.chgAmtStr})
@@ -5946,36 +5872,11 @@ setTimeout(() => {
     .then(res => res.json())
     .then(data => {
       newsdeskData = data.items || [];
-      updateNewsTicker();
     })
     .catch(() => {});
 }, 3000);
 
-function updateNewsTicker() {
-  const tickerInner = document.getElementById('newsTickerInner');
-  if (!tickerInner || newsdeskData.length === 0) return;
-  
-  // Get top 20 recent news items
-  const recentNews = [...newsdeskData]
-    .sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())
-    .slice(0, 20);
-  
-  // Create ticker items
-  const tickerItems = recentNews.map(item => {
-    const time = item.pubDate ? new Date(item.pubDate).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata' }) : '';
-    const source = item.source?.name || item.source?.id || 'News';
-    const title = (item.title || '').substring(0, 80) + (item.title && item.title.length > 80 ? '...' : '');
-    
-    return `<a href="${item.link || '#'}" target="_blank" class="news-tick-item" title="${item.title || ''}">
-      <span class="news-tick-source">${source}</span>
-      <span class="news-tick-title">${title}</span>
-      <span class="news-tick-time">${time}</span>
-    </a>`;
-  }).join('');
-  
-  // Duplicate for seamless loop
-  tickerInner.innerHTML = tickerItems + tickerItems;
-}
+
 
 // ── DCF OVERLAY POPUP ──
 let dcfData = {
@@ -7287,20 +7188,20 @@ function renderHeatmap(history) {
       else if (intensity > 0.5) cls = 'c-g3';
       else if (intensity > 0.25) cls = 'c-g2';
       else cls = 'c-g1';
-      opacity = 0.3 + intensity * 0.7;
+      opacity = 0.25 + intensity * 0.75;
     } else if (net < 0) {
       const intensity = Math.min(Math.abs(net) / 10000, 1);
       if (intensity > 0.75) cls = 'c-r4';
       else if (intensity > 0.5) cls = 'c-r3';
       else if (intensity > 0.25) cls = 'c-r2';
       else cls = 'c-r1';
-      opacity = 0.3 + intensity * 0.7;
+      opacity = 0.25 + intensity * 0.75;
     }
-    const color = net >= 0 ? '#00C853' : '#FF3B30';
+    const color = net >= 0 ? '#089981' : '#E03B3B';
     const dateStr = getDate(h);
     const dayMonth = dateStr.length >= 5 ? dateStr.slice(0,2) + '/' + dateStr.slice(3,5) : dateStr.slice(0,4);
     return `
-      <div class="fiidii-hcell cal-cell ${cls}" style="opacity:${opacity};background:${color}" title="${dateStr}: ${fmtSign(net)}">
+      <div class="fiidii-hcell cal-cell ${cls}" style="opacity:${opacity};background:${color};border:1px solid ${color}55;box-shadow:0 0 ${3+Math.round(opacity*10)}px ${color}44" title="${dateStr}: ${fmtSign(net)}">
         <div class="hc-name">${dayMonth}</div>
         <div class="hc-val">${net >= 0 ? '+' : ''}${(net/1000).toFixed(0)}K</div>
       </div>
@@ -7732,14 +7633,14 @@ const HM_CONSTITUENTS = {
 // ── Color helpers (premium smooth palette) ──
 function hmColor(pct) {
   if (pct === null || pct === undefined) return { bg:'rgba(255,255,255,0.02)', border:'rgba(255,255,255,0.05)', text:'var(--muted)' };
-  if (pct > 5.0) return { bg:'rgba(0,230,118,0.28)', border:'rgba(0,230,118,0.50)', text:'#00E676' };
-  if (pct > 2.0) return { bg:'rgba(0,200,83,0.18)',  border:'rgba(0,200,83,0.38)',  text:'#00C853' };
-  if (pct > 0.5) return { bg:'rgba(105,240,174,0.10)',border:'rgba(105,240,174,0.22)',text:'#69F0AE' };
-  if (pct > 0.0) return { bg:'rgba(105,240,174,0.05)',border:'rgba(105,240,174,0.12)',text:'#B9F6CA' };
-  if (pct > -0.5)return { bg:'rgba(255,138,128,0.05)',border:'rgba(255,138,128,0.12)',text:'#FF8A80' };
-  if (pct > -2.0)return { bg:'rgba(255,82,82,0.10)',  border:'rgba(255,82,82,0.22)', text:'#FF5252' };
-  if (pct > -5.0)return { bg:'rgba(213,0,0,0.18)',    border:'rgba(213,0,0,0.38)',   text:'#FF1744' };
-  return             { bg:'rgba(179,0,0,0.28)',     border:'rgba(179,0,0,0.50)',    text:'#D50000' };
+  if (pct > 5.0) return { bg:'rgba(8,153,129,0.30)', border:'rgba(8,153,129,0.55)', text:'#089981' };
+  if (pct > 2.0) return { bg:'rgba(59,176,140,0.20)',border:'rgba(59,176,140,0.40)',text:'#3BB08C' };
+  if (pct > 0.5) return { bg:'rgba(126,201,166,0.10)',border:'rgba(126,201,166,0.25)',text:'#7EC9A6' };
+  if (pct > 0.0) return { bg:'rgba(126,201,166,0.05)',border:'rgba(126,201,166,0.12)',text:'#7EC9A6' };
+  if (pct > -0.5)return { bg:'rgba(247,91,82,0.05)', border:'rgba(247,91,82,0.12)', text:'#F75B52' };
+  if (pct > -2.0)return { bg:'rgba(224,59,59,0.10)', border:'rgba(224,59,59,0.25)', text:'#E03B3B' };
+  if (pct > -5.0)return { bg:'rgba(185,28,28,0.20)', border:'rgba(185,28,28,0.40)', text:'#B91C1C' };
+  return             { bg:'rgba(153,27,27,0.30)',  border:'rgba(153,27,27,0.55)', text:'#991B1B' };
 }
 function hmPctStr(pct) {
   if (pct === null || pct === undefined) return '—';
@@ -7846,24 +7747,31 @@ function hmRenderConstituents(name) {
 
   // Sort by absolute pct desc for visual impact
   const sorted = [...liveStocks].sort((a,b) => Math.abs(b.pct||0) - Math.abs(a.pct||0));
+  const maxAbsPct = Math.max(0.01, ...sorted.map(s => Math.abs(s.pct||0)));
 
   const cells = sorted.map(s => {
     const c = hmColor(s.pct);
     const sz = s.cap; // 1–4
     const fSize = sz >= 3 ? 14 : sz === 2 ? 12 : 11;
     const pSize = sz >= 3 ? 16 : sz === 2 ? 14 : 12;
+    const absPct = Math.abs(s.pct||0);
+    const intensity = Math.min(1, absPct / maxAbsPct);
     return `<div style="
       grid-column:span ${sz};
       background:${c.bg}; border:1px solid ${c.border}; border-radius:8px;
       padding:${sz>=3?'14px':'10px'} ${sz>=3?'16px':'12px'};
       display:flex; flex-direction:column; gap:3px; cursor:pointer;
       transition:transform 0.15s, box-shadow 0.15s; min-height:${sz>=3?'80px':'60px'};
-      " onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.5)'"
-         onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'"
+      box-shadow:0 0 ${4+intensity*10}px ${c.border.replace('rgba','rgba').replace(/[\d.]+\)$/,'0.2)')};
+      " onmouseover="this.style.transform='scale(1.03)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.5)'"
+         onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 0 ${4+intensity*10}px ${c.border.replace('rgba','rgba').replace(/[\d.]+\)$/,'0.2)')}'"
          onclick="runQuery('${s.sym} ${s.name} stock analysis')">
       <div style="font-family:'JetBrains Mono',monospace;font-size:${fSize}px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${s.sym}</div>
       <div style="font-size:9px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${s.name}</div>
       <div style="font-family:'JetBrains Mono',monospace;font-size:${pSize}px;font-weight:700;color:${c.text};margin-top:auto">${hmPctStr(s.pct)}</div>
+      <div style="width:100%;height:2px;background:rgba(0,0,0,0.3);border-radius:2px;margin-top:4px;overflow:hidden">
+        <div style="height:100%;width:${intensity*100}%;background:${c.text};border-radius:2px;transition:width 0.3s"></div>
+      </div>
     </div>`;
   }).join('');
 
@@ -7918,30 +7826,36 @@ function hmRender(tab) {
     // Only show tiles with live data
     const hasData = d => livePcts[d.id] !== undefined;
 
-    const legend = `<div style="margin-top:10px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">
-      <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:rgba(0,230,118,0.30);vertical-align:middle;margin-right:4px"></span>Strong Up</span>
-      <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:rgba(105,240,174,0.10);vertical-align:middle;margin-right:4px"></span>Up</span>
-      <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:rgba(255,138,128,0.10);vertical-align:middle;margin-right:4px"></span>Down</span>
-      <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:rgba(213,0,0,0.28);vertical-align:middle;margin-right:4px"></span>Strong Down</span>
-      <span style="margin-left:auto;color:var(--saffron)">🔍 Click to see stocks →</span>
+    const legend = `<div style="margin-top:14px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">
+      <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#089981;vertical-align:middle;margin-right:4px;box-shadow:0 0 6px rgba(8,153,129,0.4)"></span>Strong Up</span>
+      <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#3BB08C;vertical-align:middle;margin-right:4px"></span>Up</span>
+      <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#F75B52;vertical-align:middle;margin-right:4px"></span>Down</span>
+      <span><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#991B1B;vertical-align:middle;margin-right:4px;box-shadow:0 0 6px rgba(153,27,27,0.4)"></span>Strong Down</span>
+      <span style="margin-left:auto;color:var(--saffron)">🔍 Click tiles to drill into constituent stocks →</span>
     </div>`;
 
+    const maxAbsPct = Math.max(0.01, ...HM_INDEX_DATA.map(d => livePcts[d.id] ? Math.abs(livePcts[d.id]) : 0));
     const cells = HM_INDEX_DATA.filter(hasData).map(d => {
       const pct = livePcts[d.id];
       const c = hmColor(pct);
       const hasDrill = !!d.drill;
+      const absPct = Math.abs(pct);
+      const intensity = Math.min(1, absPct / maxAbsPct);
       return `<div style="
         background:${c.bg}; border:1px solid ${c.border}; border-radius:8px;
         padding:12px 14px; display:flex; flex-direction:column; gap:4px;
         cursor:${hasDrill?'pointer':'default'};
         transition:transform 0.15s, box-shadow 0.15s;
-        position:relative;
+        position:relative; box-shadow:0 0 ${6+intensity*12}px ${c.border.replace('rgba','rgba').replace(/[\d.]+\)$/,'0.3)')};
         " ${hasDrill ? `onclick="hmDrillInto('${d.drill}')"` : ''}
-          onmouseover="this.style.transform='scale(1.04)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.4)'"
-          onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">
+          onmouseover="this.style.transform='scale(1.04)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.5)'"
+          onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 0 ${6+intensity*12}px ${c.border.replace('rgba','rgba').replace(/[\d.]+\)$/,'0.3)')}'">
         ${hasDrill ? `<div style="position:absolute;top:5px;right:6px;font-size:8px;color:${c.text};opacity:0.6">▶</div>` : ''}
-        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:0.3px;padding-right:10px">${d.label}</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;color:${c.text}">${hmPctStr(pct)}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--text);letter-spacing:0.3px;padding-right:10px">${d.label}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:900;color:${c.text};margin-top:2px">${hmPctStr(pct)}</div>
+        <div style="width:100%;height:3px;background:rgba(0,0,0,0.3);border-radius:2px;margin-top:4px;overflow:hidden">
+          <div style="height:100%;width:${intensity*100}%;background:${c.text};border-radius:2px;transition:width 0.3s"></div>
+        </div>
       </div>`;
     }).join('');
 
@@ -7950,24 +7864,32 @@ function hmRender(tab) {
       : `<div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);padding:30px;text-align:center">— No live index data available</div>`;
 
   } else if (tab === 'sectors') {
+    const liveSectorPcts = {};
+    HM_SECTOR_DATA.forEach(d => { const p = hmSectorPct(d.sectorKey); if (p !== null) liveSectorPcts[d.sectorKey] = p; });
+    const maxAbsPct = Math.max(0.01, ...Object.values(liveSectorPcts).map(Math.abs));
     const liveCells = HM_SECTOR_DATA.map(d => {
       const pct = hmSectorPct(d.sectorKey);
       if (pct === null) return null;
       const c = hmColor(pct);
       const hasDrill = !!d.drill;
+      const absPct = Math.abs(pct);
+      const intensity = Math.min(1, absPct / maxAbsPct);
       return `<div style="
         grid-column:span ${d.size};
         background:${c.bg}; border:1px solid ${c.border}; border-radius:8px;
         padding:13px 15px; display:flex; flex-direction:column; gap:4px;
         cursor:${hasDrill?'pointer':'default'};
         transition:transform 0.15s, box-shadow 0.15s; position:relative;
+        box-shadow:0 0 ${6+intensity*12}px ${c.border.replace('rgba','rgba').replace(/[\d.]+\)$/,'0.3)')};
         " ${hasDrill ? `onclick="hmDrillInto('${d.drill}')"` : ''}
-          onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.5)'"
-          onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">
+          onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 8px 28px rgba(0,0,0,0.5)'"
+          onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 0 ${6+intensity*12}px ${c.border.replace('rgba','rgba').replace(/[\d.]+\)$/,'0.3)')}'">
         ${hasDrill ? `<div style="position:absolute;top:5px;right:7px;font-size:8px;color:${c.text};opacity:0.7">▶ stocks</div>` : ''}
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);padding-right:40px">${d.label}</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:${d.size>=3?'20px':'17px'};font-weight:700;color:${c.text}">${hmPctStr(pct)}</div>
-        ${d.size >= 2 ? `<div style="font-size:9px;color:${c.text};opacity:0.75">${pct>0?'▲ Outperforming':'▼ Underperforming'}</div>` : ''}
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--text);padding-right:40px">${d.label}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:${d.size>=3?'22px':'18px'};font-weight:900;color:${c.text}">${hmPctStr(pct)}</div>
+        <div style="width:100%;height:3px;background:rgba(0,0,0,0.3);border-radius:2px;margin-top:2px;overflow:hidden">
+          <div style="height:100%;width:${intensity*100}%;background:${c.text};border-radius:2px;transition:width 0.3s"></div>
+        </div>
       </div>`;
     }).filter(Boolean);
 
@@ -7983,17 +7905,17 @@ function hmRender(tab) {
       const direction = raw.includes('▲') ? 0.3 : raw.includes('▼') ? -0.3 : 0;
       const c = hmColor(direction);
       const displayVal = raw.replace(/[▲▼]/g,'').trim();
-      const valColor = displayVal.includes('+') ? 'var(--green)' : displayVal.includes('-') ? 'var(--red)' : c.text;
+      const valColor = displayVal.includes('+') ? '#089981' : displayVal.includes('-') ? '#E03B3B' : c.text;
       return `<div style="
         background:${c.bg}; border:1px solid ${c.border}; border-radius:8px;
-        padding:12px 14px; display:flex; flex-direction:column; gap:4px; cursor:default;
-        transition:transform 0.15s;
-        " onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
-        <div style="display:flex;align-items:center;gap:6px">
-          <span style="font-size:15px">${d.icon}</span>
-          <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">${d.label}</span>
+        padding:14px 16px; display:flex; flex-direction:column; gap:6px; cursor:default;
+        transition:transform 0.15s, box-shadow 0.15s;
+        " onmouseover="this.style.transform='scale(1.04)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.4)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:18px">${d.icon}</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--text)">${d.label}</span>
         </div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:${valColor};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${displayVal}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;color:${valColor};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${displayVal}</div>
         <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">${d.sub}</div>
       </div>`;
     }).filter(Boolean);
@@ -8009,36 +7931,38 @@ function hmRender(tab) {
 
     const cells = [];
     if (fpiRaw) {
-      const c = fpiRaw.includes('+') ? hmColor(1.5) : hmColor(-1.5);
-      cells.push(`<div style="background:${c.bg}; border:1px solid ${c.border}; border-radius:8px; padding:12px 14px; display:flex; flex-direction:column; gap:5px;">
+      const isPos = fpiRaw.includes('+');
+      const c = isPos ? hmColor(1.5) : hmColor(-1.5);
+      cells.push(`<div style="background:${c.bg}; border:1px solid ${c.border}; border-radius:10px; padding:16px 18px; display:flex; flex-direction:column; gap:6px; box-shadow:0 0 14px ${isPos?'rgba(8,153,129,0.2)':'rgba(224,59,59,0.2)'}">
         <div style="display:flex;align-items:center;justify-content:space-between">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#64B5F6;letter-spacing:1px">FPI</span>
-          <span style="font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted)">Today</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#64B5F6;letter-spacing:1px">FPI</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">Today</span>
         </div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:${c.text}">${fpiRaw}</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">FPI Equity Net</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:900;color:${c.text}">${fpiRaw}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted)">FPI Equity Net (₹ Cr)</div>
       </div>`);
     }
     if (diiRaw) {
-      const c = diiRaw.includes('+') ? hmColor(1.5) : hmColor(-1.5);
-      cells.push(`<div style="background:${c.bg}; border:1px solid ${c.border}; border-radius:8px; padding:12px 14px; display:flex; flex-direction:column; gap:5px;">
+      const isPos = diiRaw.includes('+');
+      const c = isPos ? hmColor(1.5) : hmColor(-1.5);
+      cells.push(`<div style="background:${c.bg}; border:1px solid ${c.border}; border-radius:10px; padding:16px 18px; display:flex; flex-direction:column; gap:6px; box-shadow:0 0 14px ${isPos?'rgba(8,153,129,0.2)':'rgba(224,59,59,0.2)'}">
         <div style="display:flex;align-items:center;justify-content:space-between">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--gold);letter-spacing:1px">DII</span>
-          <span style="font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted)">Today</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px">DII</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">Today</span>
         </div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:${c.text}">${diiRaw}</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">DII Equity Net</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:900;color:${c.text}">${diiRaw}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted)">DII Equity Net (₹ Cr)</div>
       </div>`);
     }
 
     const fpiDate = document.getElementById('fii-date')?.textContent || '';
     el.innerHTML = cells.length
-      ? `<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:1.5px">FPI / DII FLOW · ₹ CRORE</span>
+      ? `<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:1.5px">FPI / DII FLOW · ₹ CRORE</span>
         <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">${fpiDate}</span>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px">${cells.join('')}</div>
-      <div style="margin-top:10px;display:flex;gap:16px;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px">${cells.join('')}</div>
+      <div style="margin-top:12px;display:flex;gap:16px;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)">
         <span style="color:#64B5F6">■ FPI (Foreign Portfolio Investors)</span>
         <span style="color:var(--gold)">■ DII (Domestic Institutional Investors)</span>
       </div>`
@@ -8115,8 +8039,8 @@ function renderMMI(value) {
 
   const updated = document.getElementById('mmiUpdated');
   if (updated) {
-    const now = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'});
-    updated.textContent = 'updated ' + now + ' IST';
+    const now = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'}).replace(' ','');
+    updated.textContent = 'updated ' + now;
   }
 }
 
@@ -8234,7 +8158,7 @@ function renderAISummary(text, isNew) {
   content.textContent = text;
 
   const meta = document.getElementById('aiSummaryMeta');
-  if (meta) meta.textContent = `Groq · Llama 3.3 70B · ${new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata' })} IST`;
+  if (meta) meta.textContent = `Groq · Llama 3.3 70B · ${new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata' }).replace(' ','')}`;
 }
 
 // AI Main Panel Summary Generator
@@ -8264,8 +8188,8 @@ const MNP_RSS_FEEDS = [
 function mnpUpdateTs() {
   const ts = document.getElementById('mnp-refresh-ts');
   if (ts) {
-    const now = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'});
-    ts.textContent = 'updated ' + now + ' IST';
+    const now = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'}).replace(' ','');
+    ts.textContent = 'updated ' + now;
   }
 }
 
@@ -8648,8 +8572,8 @@ function xRenderChips() {
 function xUpdateRefreshTs() {
   const el = document.getElementById('xFeedRefreshTs');
   if (!el) return;
-  const now = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'});
-  el.innerHTML = `<span style="color:var(--green);animation:blink 1.5s infinite">●</span> ${now} IST`;
+  const now = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'}).replace(' ','');
+  el.innerHTML = `<span style="color:var(--green);animation:blink 1.5s infinite">●</span> ${now}`;
 }
 
 // ── MANUAL REFRESH ──
@@ -8674,52 +8598,14 @@ setInterval(xFetchAll, 3 * 60 * 1000);
 
 // ── Index definitions (precise capital/exchange city coords) ──
 const GLOBE_INDICES = [
-  // South Asia
-  { id:'nifty50',    flag:'🇮🇳', name:'NIFTY 50',        short:'NIFTY',   region:'India · NSE',            lat:19.07, lng:72.87,  base:22500,  vol:180  },
-  { id:'sensex',     flag:'🇮🇳', name:'SENSEX',          short:'SENSEX',  region:'India · BSE',            lat:18.93, lng:72.83,  base:74200,  vol:600  },
-  // East Asia
-  { id:'nikkei',     flag:'🇯🇵', name:'Nikkei 225',      short:'N225',    region:'Japan · TSE',            lat:35.68, lng:139.69, base:38500,  vol:400  },
-  { id:'shanghaicomp',flag:'🇨🇳',name:'Shanghai Comp',   short:'SHCOMP',  region:'China · SSE',            lat:31.23, lng:121.47, base:3250,   vol:35   },
-  { id:'hangseng',   flag:'🇭🇰', name:'Hang Seng',       short:'HSI',     region:'Hong Kong · HKEX',       lat:22.28, lng:114.16, base:17200,  vol:180  },
-  { id:'kospi',      flag:'🇰🇷', name:'KOSPI',           short:'KOSPI',   region:'South Korea · KRX',      lat:37.57, lng:126.98, base:2560,   vol:30   },
-  { id:'taiwan',     flag:'🇹🇼', name:'TWSE (Taiex)',    short:'TAIEX',   region:'Taiwan · TWSE',          lat:25.05, lng:121.53, base:21400,  vol:250  },
-  // Southeast Asia & Oceania
-  { id:'asx200',     flag:'🇦🇺', name:'ASX 200',         short:'ASX200',  region:'Australia · ASX',        lat:-33.87,lng:151.21, base:7900,   vol:90   },
-  { id:'straits',    flag:'🇸🇬', name:'Straits Times',   short:'STI',     region:'Singapore · SGX',        lat:1.35,  lng:103.82, base:3350,   vol:25   },
-  { id:'klse',       flag:'🇲🇾', name:'KLSE Composite',  short:'KLCI',    region:'Malaysia · Bursa',       lat:3.14,  lng:101.69, base:1580,   vol:12   },
-  { id:'jakarta',    flag:'🇮🇩', name:'IDX Composite',   short:'IDX',     region:'Indonesia · IDX',        lat:-6.21, lng:106.85, base:7300,   vol:80   },
-  { id:'nzx50',      flag:'🇳🇿', name:'NZX 50',          short:'NZX50',   region:'New Zealand · NZX',      lat:-36.87,lng:174.77, base:12200,  vol:100  },
-  // Europe
-  { id:'ftse100',    flag:'🇬🇧', name:'FTSE 100',        short:'FTSE',    region:'UK · LSE',               lat:51.51, lng:-0.09,  base:8300,   vol:90   },
-  { id:'dax',        flag:'🇩🇪', name:'DAX 40',          short:'DAX',     region:'Germany · XETRA',        lat:50.11, lng:8.68,   base:18400,  vol:200  },
-  { id:'cac40',      flag:'🇫🇷', name:'CAC 40',          short:'CAC40',   region:'France · Euronext',      lat:48.87, lng:2.33,   base:8100,   vol:90   },
-  { id:'ibex35',     flag:'🇪🇸', name:'IBEX 35',         short:'IBEX',    region:'Spain · BME',            lat:40.42, lng:-3.70,  base:11600,  vol:120  },
-  { id:'mib',        flag:'🇮🇹', name:'FTSE MIB',        short:'MIB',     region:'Italy · Borsa',          lat:45.46, lng:9.19,   base:34200,  vol:350  },
-  { id:'smi',        flag:'🇨🇭', name:'SMI',             short:'SMI',     region:'Switzerland · SIX',      lat:47.38, lng:8.54,   base:11800,  vol:130  },
-  { id:'aex',        flag:'🇳🇱', name:'AEX',             short:'AEX',     region:'Netherlands · Euronext', lat:52.37, lng:4.90,   base:880,    vol:10   },
-  { id:'omx',        flag:'🇸🇪', name:'OMX Stockholm',   short:'OMXS30',  region:'Sweden · Nasdaq Nordic', lat:59.33, lng:18.07,  base:2400,   vol:25   },
-  { id:'wse',        flag:'🇵🇱', name:'WIG 20',          short:'WIG20',   region:'Poland · WSE',           lat:52.23, lng:21.01,  base:2200,   vol:22   },
-  { id:'bist100',    flag:'🇹🇷', name:'BIST 100',        short:'BIST',    region:'Turkey · Borsa Istanbul',lat:41.01, lng:28.98,  base:9800,   vol:100  },
-  { id:'moex',       flag:'🇷🇺', name:'MOEX Russia',     short:'MOEX',    region:'Russia · MOEX',          lat:55.75, lng:37.62,  base:3100,   vol:35   },
-  // Americas
-  { id:'spx',        flag:'🇺🇸', name:'S&P 500',         short:'SPX',     region:'USA · NYSE',             lat:40.71, lng:-74.01, base:5300,   vol:55   },
-  { id:'djia',       flag:'🇺🇸', name:'Dow Jones',       short:'DJIA',    region:'USA · NYSE',             lat:40.75, lng:-73.99, base:39200,  vol:420  },
-  { id:'nasdaq',     flag:'🇺🇸', name:'NASDAQ',          short:'COMP',    region:'USA · Nasdaq',           lat:40.76, lng:-73.97, base:16800,  vol:200  },
-  { id:'tsx',        flag:'🇨🇦', name:'TSX Composite',   short:'TSX',     region:'Canada · TSX',           lat:43.65, lng:-79.38, base:22100,  vol:230  },
-  { id:'bovespa',    flag:'🇧🇷', name:'Bovespa',         short:'IBOV',    region:'Brazil · B3',            lat:-23.55,lng:-46.63, base:126000, vol:1300 },
-  { id:'merval',     flag:'🇦🇷', name:'MERVAL',          short:'MERVAL',  region:'Argentina · BYMA',       lat:-34.60,lng:-58.38, base:1650000,vol:18000},
-  { id:'ipc',        flag:'🇲🇽', name:'IPC (BMV)',       short:'IPC',     region:'Mexico · BMV',           lat:19.43, lng:-99.13, base:54000,  vol:560  },
-  { id:'ipsa',       flag:'🇨🇱', name:'IPSA',            short:'IPSA',    region:'Chile · Santiago',       lat:-33.45,lng:-70.67, base:6400,   vol:65   },
-  // Middle East
-  { id:'tadawul',    flag:'🇸🇦', name:'Tadawul (TASI)',  short:'TASI',    region:'Saudi Arabia · Tadawul', lat:24.69, lng:46.72,  base:12100,  vol:130  },
-  { id:'dfm',        flag:'🇦🇪', name:'DFM General',     short:'DFM',     region:'UAE · Dubai FM',         lat:25.20, lng:55.27,  base:4300,   vol:45   },
-  { id:'egx30',      flag:'🇪🇬', name:'EGX 30',          short:'EGX30',   region:'Egypt · EGX',            lat:30.06, lng:31.24,  base:26000,  vol:280  },
-  { id:'isx',        flag:'🇮🇱', name:'Tel Aviv 125',    short:'TA125',   region:'Israel · TASE',          lat:32.08, lng:34.78,  base:2100,   vol:22   },
-  { id:'qe',         flag:'🇶🇦', name:'QE All Share',    short:'QEAS',    region:'Qatar · QSE',            lat:25.29, lng:51.53,  base:10400,  vol:110  },
-  // Africa
-  { id:'jse',        flag:'🇿🇦', name:'JSE Top 40',      short:'TOP40',   region:'South Africa · JSE',     lat:-26.20,lng:28.04,  base:76000,  vol:800  },
-  { id:'nse_kenya',  flag:'🇰🇪', name:'NSE 20',          short:'NSE20',   region:'Kenya · NSE',            lat:-1.28, lng:36.82,  base:1680,   vol:18   },
-  { id:'ngx',        flag:'🇳🇬', name:'NGX All Share',   short:'NGX',     region:'Nigeria · NGX',          lat:6.45,  lng:3.40,   base:98000,  vol:1000 },
+  { id:'nifty50',     flag:'🇮🇳', name:'NIFTY 50',        short:'NIFTY',   region:'India · NSE',            lat:19.07, lng:72.87,  base:22500,  vol:180  },
+  { id:'spx',         flag:'🇺🇸', name:'S&P 500',          short:'SPX',     region:'USA · NYSE',             lat:40.71, lng:-74.01, base:5300,   vol:55   },
+  { id:'shanghaicomp',flag:'🇨🇳', name:'Shanghai Comp',    short:'SHCOMP',  region:'China · SSE',            lat:31.23, lng:121.47, base:3250,   vol:35   },
+  { id:'ftse100',     flag:'🇬🇧', name:'FTSE 100',         short:'FTSE',    region:'UK · LSE',               lat:51.51, lng:-0.09,  base:8300,   vol:90   },
+  { id:'dax',         flag:'🇩🇪', name:'DAX 40',           short:'DAX',     region:'Germany · XETRA',        lat:50.11, lng:8.68,   base:18400,  vol:200  },
+  { id:'cac40',       flag:'🇫🇷', name:'CAC 40',           short:'CAC40',   region:'France · Euronext',      lat:48.87, lng:2.33,   base:8100,   vol:90   },
+  { id:'kospi',       flag:'🇰🇷', name:'KOSPI',            short:'KOSPI',   region:'South Korea · KRX',      lat:37.57, lng:126.98, base:2560,   vol:30   },
+  { id:'nikkei',      flag:'🇯🇵', name:'Nikkei 225',       short:'N225',    region:'Japan · TSE',            lat:35.68, lng:139.69, base:38500,  vol:400  },
 ];
 
 // ── Market data state ──
@@ -8747,12 +8633,12 @@ function gSimulate() {
 }
 
 function gColor(pct) {
-  if (pct >  1.0) return '#00E676';
-  if (pct >  0.2) return '#69F0AE';
-  if (pct >  0)   return '#B9F6CA';
-  if (pct > -0.2) return '#FF5252';
-  if (pct > -1.0) return '#FF1744';
-  return '#D50000';
+  if (pct >  2.0) return '#089981';
+  if (pct >  0.5) return '#3BB08C';
+  if (pct >  0)   return '#7EC9A6';
+  if (pct > -0.5) return '#F75B52';
+  if (pct > -2.0) return '#E03B3B';
+  return '#B91C1C';
 }
 
 function gFmt(v, base) {
@@ -8764,29 +8650,23 @@ function gFmt(v, base) {
 function gRenderSidebar() {
   const list = document.getElementById('globeIndicesList');
   if (!list) return;
-  const sorted = [...GLOBE_INDICES].sort((a,b)=>{
-    const da=gData[a.id], db=gData[b.id];
-    if(!da||!db) return 0;
-    return Math.abs(db.pct)-Math.abs(da.pct);
-  });
-  list.innerHTML = sorted.map(idx=>{
+  list.innerHTML = GLOBE_INDICES.map(idx=>{
     const d = gData[idx.id]; if(!d) return '';
     const col = gColor(d.pct);
-    const ts = d.time.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
-    const dt = d.time.toLocaleDateString('en-US',{day:'2-digit',month:'short'});
     const sel = gHovered===idx.id;
     return `<div class="gi-item${sel?' selected':''}"
-      onmouseover="gHoverIdx('${idx.id}')" onmouseout="gHoverIdx(null)">
-      <div class="gi-flag">${idx.flag}</div>
-      <div class="gi-info">
-        <div class="gi-name">${idx.name}</div>
-        <div class="gi-region">${idx.region}</div>
+      onmouseover="gHoverIdx('${idx.id}')" onmouseout="gHoverIdx(null)"
+      style="display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid rgba(30,30,50,0.4);cursor:pointer;transition:all 0.2s;background:${sel?col+'18':'transparent'};border-left:3px solid ${sel?col:'transparent'}">
+      <span style="font-size:26px;line-height:1">${idx.flag}</span>
+      <div style="flex:1;min-width:0">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--text);letter-spacing:0.3px">${idx.name}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--muted);margin-top:1px">${idx.region}</div>
       </div>
-      <div class="gi-vals">
-        <div class="gi-price">${gFmt(d.value,idx.base)}</div>
-        <div class="gi-chg" style="color:${col}">${d.pct>=0?'+':''}${d.pct.toFixed(2)}%</div>
-        <div class="gi-time">${ts} · ${dt}</div>
-      </div></div>`;
+      <div style="text-align:right">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;color:${col}">${d.pct>=0?'+':''}${d.pct.toFixed(2)}%</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--text);margin-top:2px">${gFmt(d.value,idx.base)}</div>
+      </div>
+    </div>`;
   }).join('');
 }
 
@@ -9148,7 +9028,7 @@ function openGlobeIndices() {
         });
         const ts = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'});
         const el = document.getElementById('globeLastUpdate');
-        if (el) el.textContent = `Last updated: ${ts} IST`;
+        if (el) el.textContent = `Last updated: ${ts}`;
       }
     }, 30000);
   }
@@ -9183,7 +9063,7 @@ const keyReady = true; // Gemini removed — Groq key loaded via loadGroqKeys() 
       <div class="module-sub">Model macroeconomic shocks · Sector impact heatmap · Portfolio stress test · Risk distribution</div>
     </div>
     <div style="display:flex;align-items:center;gap:10px">
-      <div id="scenarioStatus" style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted)">Configure scenario →</div>
+      <div id="scenarioStatus" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--muted)">Configure scenario →</div>
       <button class="module-close" onclick="closeScenario()" title="Close">✕</button>
     </div>
   </div>
@@ -9193,12 +9073,12 @@ const keyReady = true; // Gemini removed — Groq key loaded via loadGroqKeys() 
     <div class="module-sidebar">
       <div>
         <div class="mod-label">Preset Scenarios</div>
-        <div style="display:flex;flex-direction:column;gap:5px">
-          <button class="sc-co-chip active" style="text-align:left;width:100%;font-size:10px;padding:7px 10px" onclick="loadPreset('rateHike',this)">📈 RBI Rate Hike +100bps</button>
-          <button class="sc-co-chip" style="text-align:left;width:100%;font-size:10px;padding:7px 10px" onclick="loadPreset('oilShock',this)">🛢️ Oil Shock +40%</button>
-          <button class="sc-co-chip" style="text-align:left;width:100%;font-size:10px;padding:7px 10px" onclick="loadPreset('recession',this)">📉 Mild Recession</button>
-          <button class="sc-co-chip" style="text-align:left;width:100%;font-size:10px;padding:7px 10px" onclick="loadPreset('rupeeSlide',this)">💱 Rupee Depreciation -10%</button>
-          <button class="sc-co-chip" style="text-align:left;width:100%;font-size:10px;padding:7px 10px" onclick="loadPreset('rally',this)">🚀 Bull Market Rally</button>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <button class="sc-co-chip active" style="text-align:left;width:100%" onclick="loadPreset('rateHike',this)">📈 RBI Rate Hike +100bps</button>
+          <button class="sc-co-chip" style="text-align:left;width:100%" onclick="loadPreset('oilShock',this)">🛢️ Oil Shock +40%</button>
+          <button class="sc-co-chip" style="text-align:left;width:100%" onclick="loadPreset('recession',this)">📉 Mild Recession</button>
+          <button class="sc-co-chip" style="text-align:left;width:100%" onclick="loadPreset('rupeeSlide',this)">💱 Rupee Depreciation -10%</button>
+          <button class="sc-co-chip" style="text-align:left;width:100%" onclick="loadPreset('rally',this)">🚀 Bull Market Rally</button>
         </div>
       </div>
 
@@ -9254,8 +9134,8 @@ const keyReady = true; // Gemini removed — Groq key loaded via loadGroqKeys() 
 
       <div>
         <div class="mod-label">Scenario Comparison Log</div>
-        <div id="savedScenariosList" style="display:flex;flex-direction:column;gap:5px;font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace">
-          <div style="font-size:10px">Run a scenario to compare.</div>
+        <div id="savedScenariosList" style="display:flex;flex-direction:column;gap:4px;font-size:11px;font-weight:600;color:var(--muted);font-family:'JetBrains Mono',monospace">
+          <div style="font-size:11px">Run a scenario to compare.</div>
         </div>
       </div>
     </div>
@@ -9268,11 +9148,11 @@ const keyReady = true; // Gemini removed — Groq key loaded via loadGroqKeys() 
         <div class="mod-panel">
           <div class="mod-panel-hdr">
             <span>📊 Sector Impact Heatmap</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted)" id="heatmapLastRun">Not run yet</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--muted)" id="heatmapLastRun">Not run yet</span>
           </div>
           <div class="mod-panel-body">
             <div class="heatmap-grid" id="sectorHeatmap"></div>
-            <div style="display:flex;justify-content:center;gap:14px;margin-top:10px;font-size:9px;font-family:'JetBrains Mono',monospace;color:var(--muted)">
+            <div style="display:flex;justify-content:center;gap:14px;margin-top:10px;font-size:11px;font-weight:600;font-family:'JetBrains Mono',monospace;color:var(--muted)">
               <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#FF1744;display:inline-block"></span>Strong -</span>
               <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#FF6B00;display:inline-block"></span>Moderate -</span>
               <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#1E1E32;display:inline-block;border:1px solid #333"></span>Neutral</span>
@@ -9285,21 +9165,21 @@ const keyReady = true; // Gemini removed — Groq key loaded via loadGroqKeys() 
           <div class="mod-panel-hdr"><span>📉 Portfolio Risk</span></div>
           <div class="mod-panel-body" style="display:flex;flex-direction:column;gap:14px">
             <div>
-              <div style="font-size:10px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:3px">DRAWDOWN PROBABILITY</div>
+              <div style="font-size:12px;font-weight:700;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:3px">DRAWDOWN PROBABILITY</div>
               <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700" id="drawdownPct">—</div>
               <div class="drawdown-meter"><div class="drawdown-fill" id="drawdownFill" style="width:0%"></div><div class="drawdown-marker" id="drawdownMarker" style="left:0%"></div></div>
-              <div style="display:flex;justify-content:space-between;font-size:8px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-top:3px"><span>LOW</span><span>HIGH</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:9px;font-weight:600;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-top:3px"><span>LOW</span><span>HIGH</span></div>
             </div>
             <div>
-              <div style="font-size:10px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:6px">PORTFOLIO VALUE Δ</div>
+              <div style="font-size:12px;font-weight:700;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:6px">PORTFOLIO VALUE Δ</div>
               <div id="portfolioImpactList" style="display:flex;flex-direction:column;gap:5px"></div>
             </div>
             <div>
-              <div style="font-size:10px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:4px">RISK EXPOSURE SCORE</div>
+              <div style="font-size:12px;font-weight:700;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:4px">RISK EXPOSURE SCORE</div>
               <div class="risk-bar-bg" style="height:8px;border-radius:4px"><div class="risk-bar" id="riskScoreBar" style="width:0%;background:var(--gold);height:100%;border-radius:4px;transition:width 0.8s"></div></div>
               <div style="display:flex;justify-content:space-between;margin-top:4px">
-                <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted)">Score</div>
-                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--text)" id="riskScoreVal">—/100</div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--muted)">Score</div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--text)" id="riskScoreVal">—/100</div>
               </div>
             </div>
           </div>
@@ -9313,12 +9193,12 @@ const keyReady = true; // Gemini removed — Groq key loaded via loadGroqKeys() 
           <div class="mod-panel-hdr">
             <span>💹 Expected Gain/Loss Per Asset</span>
             <div style="display:flex;gap:6px">
-              <span style="font-family:'JetBrains Mono',monospace;font-size:9px;background:rgba(0,200,83,0.1);color:var(--green);padding:2px 7px;border-radius:4px;border:1px solid rgba(0,200,83,0.3)" id="winnersCount">Winners: —</span>
-              <span style="font-family:'JetBrains Mono',monospace;font-size:9px;background:rgba(255,23,68,0.1);color:var(--red);padding:2px 7px;border-radius:4px;border:1px solid rgba(255,23,68,0.3)" id="losersCount">Losers: —</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;background:rgba(0,200,83,0.1);color:var(--green);padding:3px 9px;border-radius:4px;border:1px solid rgba(0,200,83,0.3)" id="winnersCount">Winners: —</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;background:rgba(255,23,68,0.1);color:var(--red);padding:3px 9px;border-radius:4px;border:1px solid rgba(255,23,68,0.3)" id="losersCount">Losers: —</span>
             </div>
           </div>
           <div id="assetImpactTable" style="max-height:220px;overflow-y:auto">
-            <div style="padding:20px;text-align:center;font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace">Run simulation to see asset impact</div>
+            <div style="padding:20px;text-align:center;font-size:13px;font-weight:600;color:var(--muted);font-family:'JetBrains Mono',monospace">Run simulation to see asset impact</div>
           </div>
         </div>
 
@@ -9326,7 +9206,7 @@ const keyReady = true; // Gemini removed — Groq key loaded via loadGroqKeys() 
           <div class="mod-panel-hdr"><span>📊 Risk Distribution</span></div>
           <div class="mod-panel-body">
             <div class="risk-dist-bars" id="riskDistBars" style="height:80px;align-items:flex-end;justify-content:space-around;display:flex;gap:4px"></div>
-            <div style="font-size:10px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-top:10px;line-height:1.6" id="riskSummaryText">Configure and run scenario to see risk distribution.</div>
+            <div style="font-size:12px;font-weight:600;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-top:10px;line-height:1.6" id="riskSummaryText">Configure and run scenario to see risk distribution.</div>
           </div>
         </div>
       </div>
@@ -9338,7 +9218,7 @@ const keyReady = true; // Gemini removed — Groq key loaded via loadGroqKeys() 
           <div class="mod-panel-hdr"><span>📅 Scenario Timeline Projection</span></div>
           <div class="mod-panel-body">
             <div class="timeline-track" id="scenarioTimeline">
-              <div style="font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace">Run simulation to generate timeline.</div>
+              <div style="font-size:13px;font-weight:600;color:var(--muted);font-family:'JetBrains Mono',monospace">Run simulation to generate timeline.</div>
             </div>
           </div>
         </div>
@@ -9346,17 +9226,17 @@ const keyReady = true; // Gemini removed — Groq key loaded via loadGroqKeys() 
         <div class="mod-panel">
           <div class="mod-panel-hdr">
             <span>⚖️ Scenario Comparison</span>
-            <button onclick="clearScenarioComparisons()" style="font-size:9px;background:none;border:1px solid var(--border);color:var(--muted);padding:2px 7px;border-radius:4px;cursor:pointer;font-family:'JetBrains Mono',monospace">Clear</button>
+            <button onclick="clearScenarioComparisons()" style="font-size:11px;font-weight:700;background:none;border:1px solid var(--border);color:var(--muted);padding:3px 9px;border-radius:4px;cursor:pointer;font-family:'JetBrains Mono',monospace">Clear</button>
           </div>
           <div style="overflow-x:auto">
             <table class="scenario-compare" id="scenarioCompareTable">
               <thead>
                 <tr>
-                  <th>Scenario</th><th>Portfolio Δ</th><th>Risk</th><th>Worst</th><th>Best</th>
+                  <th style="font-size:11px;font-weight:700;letter-spacing:0.5px">Scenario</th><th style="font-size:11px;font-weight:700;letter-spacing:0.5px">Portfolio Δ</th><th style="font-size:11px;font-weight:700;letter-spacing:0.5px">Risk</th><th style="font-size:11px;font-weight:700;letter-spacing:0.5px">Worst</th><th style="font-size:11px;font-weight:700;letter-spacing:0.5px">Best</th>
                 </tr>
               </thead>
               <tbody id="scenarioCompareBody">
-                <tr><td colspan="5" style="padding:16px;text-align:center;color:var(--muted)">Run scenarios to compare</td></tr>
+                <tr><td colspan="5" style="padding:16px;text-align:center;font-size:13px;font-weight:600;color:var(--muted)">Run scenarios to compare</td></tr>
               </tbody>
             </table>
           </div>
@@ -9417,29 +9297,29 @@ const keyReady = true; // Gemini removed — Groq key loaded via loadGroqKeys() 
         </div>
       </div>
       <button class="run-btn cyan" onclick="scRunAnalysis()">🔍 ANALYSE SUPPLY CHAIN</button>
-      <div class="mod-panel">
-        <div class="mod-panel-hdr"><span>📋 Key Metrics</span></div>
-        <div class="mod-panel-body" style="display:flex;flex-direction:column;gap:10px">
+      <div class="mod-panel" style="border-radius:8px">
+        <div class="mod-panel-hdr" style="padding:8px 12px;font-size:12px"><span>📋 Key Metrics</span></div>
+        <div class="mod-panel-body" style="display:flex;flex-direction:column;gap:8px;padding:10px">
           <div>
-            <div style="font-size:9px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:3px">OVERALL RISK SCORE</div>
-            <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text)" id="scOverallScore">—</div>
+            <div style="font-size:9px;font-weight:700;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:2px">OVERALL RISK SCORE</div>
+            <div style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--text)" id="scOverallScore">—</div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
             <div style="background:var(--ink);padding:8px;border-radius:6px;border:1px solid var(--border)">
-              <div style="font-size:9px;color:var(--muted);font-family:'JetBrains Mono',monospace">SUPPLIERS</div>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;margin-top:3px" id="scSupplierCount">—</div>
+              <div style="font-size:9px;font-weight:700;color:var(--muted);font-family:'JetBrains Mono',monospace">SUPPLIERS</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;margin-top:2px" id="scSupplierCount">—</div>
             </div>
             <div style="background:var(--ink);padding:8px;border-radius:6px;border:1px solid var(--border)">
-              <div style="font-size:9px;color:var(--muted);font-family:'JetBrains Mono',monospace">CRITICAL</div>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;margin-top:3px;color:var(--red)" id="scCriticalCount">—</div>
+              <div style="font-size:9px;font-weight:700;color:var(--muted);font-family:'JetBrains Mono',monospace">CRITICAL</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;margin-top:2px;color:var(--red)" id="scCriticalCount">—</div>
             </div>
             <div style="background:var(--ink);padding:8px;border-radius:6px;border:1px solid var(--border)">
-              <div style="font-size:9px;color:var(--muted);font-family:'JetBrains Mono',monospace">REGIONS</div>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;margin-top:3px" id="scRegionCount">—</div>
+              <div style="font-size:9px;font-weight:700;color:var(--muted);font-family:'JetBrains Mono',monospace">REGIONS</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;margin-top:2px" id="scRegionCount">—</div>
             </div>
             <div style="background:var(--ink);padding:8px;border-radius:6px;border:1px solid var(--border)">
-              <div style="font-size:9px;color:var(--muted);font-family:'JetBrains Mono',monospace">ALERTS</div>
-              <div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;margin-top:3px;color:var(--gold)" id="scAlertCount">—</div>
+              <div style="font-size:9px;font-weight:700;color:var(--muted);font-family:'JetBrains Mono',monospace">ALERTS</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;margin-top:2px;color:var(--gold)" id="scAlertCount">—</div>
             </div>
           </div>
         </div>
@@ -9447,19 +9327,19 @@ const keyReady = true; // Gemini removed — Groq key loaded via loadGroqKeys() 
     </div>
 
     <div class="module-main">
-      <div style="display:grid;grid-template-columns:1fr 300px;gap:14px;flex-shrink:0">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;flex-shrink:0">
         <div class="mod-panel">
           <div class="mod-panel-hdr">
             <span>🕸️ Supply Chain Network Graph</span>
-            <div class="sc-node-legend" style="flex-wrap:wrap">
-              <div class="sc-legend-item"><div class="sc-legend-dot" style="background:#00BCD4"></div>Company</div>
-              <div class="sc-legend-item"><div class="sc-legend-dot" style="background:var(--saffron)"></div>T1</div>
-              <div class="sc-legend-item"><div class="sc-legend-dot" style="background:var(--gold)"></div>T2</div>
-              <div class="sc-legend-item"><div class="sc-legend-dot" style="background:var(--red)"></div>High Risk</div>
+            <div style="display:flex;gap:10px;font-size:10px;font-weight:600;color:var(--muted);font-family:'JetBrains Mono',monospace">
+              <span style="display:flex;align-items:center;gap:3px"><span style="width:8px;height:8px;border-radius:50%;background:#00BCD4;display:inline-block"></span>Co.</span>
+              <span style="display:flex;align-items:center;gap:3px"><span style="width:8px;height:8px;border-radius:50%;background:var(--saffron);display:inline-block"></span>T1</span>
+              <span style="display:flex;align-items:center;gap:3px"><span style="width:8px;height:8px;border-radius:50%;background:var(--gold);display:inline-block"></span>T2</span>
+              <span style="display:flex;align-items:center;gap:3px"><span style="width:8px;height:8px;border-radius:50%;background:var(--red);display:inline-block"></span>Risk</span>
             </div>
           </div>
-          <div class="mod-panel-body" style="padding:10px">
-            <canvas id="scNetworkCanvas" height="260"></canvas>
+          <div class="mod-panel-body" style="padding:8px">
+            <canvas id="scNetworkCanvas" height="340"></canvas>
           </div>
         </div>
         <div class="mod-panel">
@@ -9474,16 +9354,16 @@ const keyReady = true; // Gemini removed — Groq key loaded via loadGroqKeys() 
         <div class="mod-panel">
           <div class="mod-panel-hdr">
             <span>🚨 High-Risk Dependency Alerts</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--red);animation:blink 1.5s infinite">● LIVE</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--red);animation:blink 1.5s infinite">● LIVE</span>
           </div>
           <div class="mod-panel-body" style="padding:12px;max-height:200px;overflow-y:auto" id="scAlertsList">
-            <div style="font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace">Analyse a company to see alerts.</div>
+            <div style="font-size:13px;font-weight:600;color:var(--muted);font-family:'JetBrains Mono',monospace">Analyse a company to see alerts.</div>
           </div>
         </div>
         <div class="mod-panel">
           <div class="mod-panel-hdr"><span>🏭 Supplier Risk Scores</span></div>
           <div style="max-height:200px;overflow-y:auto" id="scRiskScores">
-            <div style="padding:16px;font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace">Select and analyse a company.</div>
+            <div style="padding:16px;font-size:13px;font-weight:600;color:var(--muted);font-family:'JetBrains Mono',monospace">Select and analyse a company.</div>
           </div>
         </div>
       </div>
@@ -9493,7 +9373,7 @@ const keyReady = true; // Gemini removed — Groq key loaded via loadGroqKeys() 
           <div class="mod-panel-hdr"><span>🌳 Supply Dependency Tree</span></div>
           <div class="mod-panel-body" style="max-height:240px;overflow-y:auto">
             <div class="dep-tree" id="scDepTree">
-              <div style="font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace">Analyse a company to see dependency tree.</div>
+              <div style="font-size:13px;font-weight:600;color:var(--muted);font-family:'JetBrains Mono',monospace">Analyse a company to see dependency tree.</div>
             </div>
           </div>
         </div>
@@ -9879,17 +9759,17 @@ function scRenderDepTree(data){
 function scRenderDisruption(data){
   const el=document.getElementById('scDisruptionAnalysis');
   const high=data.suppliers.filter(s=>s.riskScore>=60).slice(0,4);
-  if(!high.length){el.innerHTML='<div style="font-size:11px;color:var(--muted)">No high-risk dependencies found.</div>';return;}
+  if(!high.length){el.innerHTML='<div style="font-size:13px;font-weight:600;color:var(--muted)">No high-risk dependencies found.</div>';return;}
   el.innerHTML=high.map(s=>{
     const ri=Math.round(s.riskScore*0.3);
     const oi=Math.round(s.riskScore*0.5);
-    return`<div class="sc-alert high" style="flex-direction:column;gap:6px">
-      <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-size:12px;font-weight:600;color:var(--red)">${s.name} disrupted</span><span style="font-size:9px;font-family:JetBrains Mono,monospace;color:var(--muted)">${s.region}</span></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-        <div style="background:rgba(255,23,68,0.08);padding:6px 8px;border-radius:5px"><div style="font-size:8px;color:var(--muted);font-family:JetBrains Mono,monospace">REVENUE IMPACT</div><div style="font-size:13px;font-weight:700;color:var(--red);font-family:JetBrains Mono,monospace">-${ri}%</div></div>
-        <div style="background:rgba(255,107,0,0.08);padding:6px 8px;border-radius:5px"><div style="font-size:8px;color:var(--muted);font-family:JetBrains Mono,monospace">OPS IMPACT</div><div style="font-size:13px;font-weight:700;color:var(--saffron);font-family:JetBrains Mono,monospace">-${oi}%</div></div>
+    return`<div class="sc-alert high" style="flex-direction:column;gap:8px">
+      <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-size:14px;font-weight:700;color:var(--red)">${s.name} disrupted</span><span style="font-size:11px;font-weight:600;font-family:JetBrains Mono,monospace;color:var(--muted)">${s.region}</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:rgba(255,23,68,0.08);padding:8px 10px;border-radius:6px"><div style="font-size:9px;font-weight:700;color:var(--muted);font-family:JetBrains Mono,monospace">REVENUE IMPACT</div><div style="font-size:16px;font-weight:700;color:var(--red);font-family:JetBrains Mono,monospace">-${ri}%</div></div>
+        <div style="background:rgba(255,107,0,0.08);padding:8px 10px;border-radius:6px"><div style="font-size:9px;font-weight:700;color:var(--muted);font-family:JetBrains Mono,monospace">OPS IMPACT</div><div style="font-size:16px;font-weight:700;color:var(--saffron);font-family:JetBrains Mono,monospace">-${oi}%</div></div>
       </div>
-      <div style="font-size:10px;color:var(--muted);line-height:1.4">${s.commodity} shortfall → production halt → earnings miss → stock pressure.</div>
+      <div style="font-size:12px;font-weight:600;color:var(--muted);line-height:1.5">${s.commodity} shortfall → production halt → earnings miss → stock pressure.</div>
     </div>`;
   }).join('');
 }
@@ -9897,42 +9777,46 @@ function scRenderDisruption(data){
 function scDrawNetwork(data){
   const canvas=document.getElementById('scNetworkCanvas');
   const ctx=canvas.getContext('2d');
-  const W=canvas.offsetWidth||500; const H=260;
+  const W=canvas.offsetWidth||500; const H=340;
   canvas.width=W; canvas.height=H;
   ctx.clearRect(0,0,W,H);
-  const cx=W/2, cy=H/2-10;
-  const radius=Math.min(W,H)*0.37;
+  const cx=W/2, cy=H/2;
+  const n=Math.max(1,data.suppliers.length);
+  const radius=Math.min(W,H)*0.38;
   const sup=data.suppliers;
+  // Subtle ring
+  ctx.beginPath(); ctx.arc(cx,cy,radius,0,2*Math.PI);
+  ctx.strokeStyle='rgba(100,181,246,0.08)'; ctx.lineWidth=1; ctx.setLineDash([4,6]); ctx.stroke(); ctx.setLineDash([]);
   // Edges
   sup.forEach((s,i)=>{
-    const angle=(2*Math.PI*i/sup.length)-Math.PI/2;
+    const angle=(2*Math.PI*i/n)-Math.PI/2;
     const x=cx+radius*Math.cos(angle); const y=cy+radius*Math.sin(angle);
     const col=s.riskScore>=75?'#FF1744':s.riskScore>=45?'#FF6B00':'#00C853';
     ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(x,y);
-    ctx.strokeStyle=col+'55'; ctx.lineWidth=s.tier===1?1.5:0.8; ctx.stroke();
+    ctx.strokeStyle=col+'44'; ctx.lineWidth=s.tier===1?1.5:0.8; ctx.stroke();
   });
   // Supplier nodes
   sup.forEach((s,i)=>{
-    const angle=(2*Math.PI*i/sup.length)-Math.PI/2;
+    const angle=(2*Math.PI*i/n)-Math.PI/2;
     const x=cx+radius*Math.cos(angle); const y=cy+radius*Math.sin(angle);
     const col=s.riskScore>=75?'#FF1744':s.riskScore>=45?'#FF6B00':'#00C853';
-    const r=s.tier===1?7:5;
+    const r=6;
     ctx.beginPath(); ctx.arc(x,y,r,0,2*Math.PI);
-    ctx.fillStyle=col+'33'; ctx.fill();
-    ctx.strokeStyle=col; ctx.lineWidth=1.5; ctx.stroke();
-    ctx.fillStyle='#e8e8f0'; ctx.font='9px JetBrains Mono,monospace'; ctx.textAlign='center';
-    const lx=cx+(radius+22)*Math.cos(angle); const ly=cy+(radius+22)*Math.sin(angle);
-    const sn=s.name.length>11?s.name.slice(0,10)+'…':s.name;
+    ctx.fillStyle=col; ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.2)'; ctx.lineWidth=1; ctx.stroke();
+    // Label below node
+    ctx.fillStyle='#e8e8f0'; ctx.font='10px JetBrains Mono,monospace'; ctx.textAlign='center'; ctx.textBaseline='top';
+    const lx=x; const ly=y+r+5;
+    const sn=s.name.length>14?s.name.slice(0,13)+'…':s.name;
     ctx.fillText(sn,lx,ly);
   });
-  // Center
-  ctx.beginPath(); ctx.arc(cx,cy,18,0,2*Math.PI);
-  ctx.fillStyle='rgba(0,188,212,0.18)'; ctx.fill();
-  ctx.strokeStyle='#00BCD4'; ctx.lineWidth=2; ctx.stroke();
-  ctx.fillStyle='#00BCD4'; ctx.font='bold 10px JetBrains Mono,monospace';
+  // Center - subtle
+  ctx.beginPath(); ctx.arc(cx,cy,16,0,2*Math.PI);
+  ctx.fillStyle='rgba(0,188,212,0.12)'; ctx.fill();
+  ctx.strokeStyle='rgba(0,188,212,0.3)'; ctx.lineWidth=1.5; ctx.stroke();
+  ctx.fillStyle='rgba(0,188,212,0.7)'; ctx.font='bold 11px JetBrains Mono,monospace';
   ctx.textAlign='center'; ctx.textBaseline='middle';
-  ctx.fillText(scCurrentCo.length>8?scCurrentCo.slice(0,8):scCurrentCo,cx,cy);
-  ctx.textBaseline='alphabetic';
+  ctx.fillText(scCurrentCo.length>12?scCurrentCo.slice(0,11)+'…':scCurrentCo,cx,cy);
 }
 
 function openSupplyChain(){
@@ -10522,19 +10406,19 @@ function renderGroqSupplyChain(data) {
   </div>
 
   <!-- ROW 1: Network + Geo -->
-  <div style="display:grid;grid-template-columns:1fr 300px;gap:14px;flex-shrink:0">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;flex-shrink:0">
     <div class="mod-panel">
       <div class="mod-panel-hdr">
         <span>🕸️ Supply Chain Network Graph</span>
-        <div class="sc-node-legend">
-          <div class="sc-legend-item"><div class="sc-legend-dot" style="background:#00BCD4"></div>Company</div>
-          <div class="sc-legend-item"><div class="sc-legend-dot" style="background:var(--saffron)"></div>Tier-1</div>
-          <div class="sc-legend-item"><div class="sc-legend-dot" style="background:var(--gold)"></div>Tier-2</div>
-          <div class="sc-legend-item"><div class="sc-legend-dot" style="background:var(--red)"></div>High Risk</div>
+        <div style="display:flex;gap:10px;font-size:10px;font-weight:600;color:var(--muted);font-family:'JetBrains Mono',monospace">
+          <span style="display:flex;align-items:center;gap:3px"><span style="width:8px;height:8px;border-radius:50%;background:#00BCD4;display:inline-block"></span>Co.</span>
+          <span style="display:flex;align-items:center;gap:3px"><span style="width:8px;height:8px;border-radius:50%;background:var(--saffron);display:inline-block"></span>T1</span>
+          <span style="display:flex;align-items:center;gap:3px"><span style="width:8px;height:8px;border-radius:50%;background:var(--gold);display:inline-block"></span>T2</span>
+          <span style="display:flex;align-items:center;gap:3px"><span style="width:8px;height:8px;border-radius:50%;background:var(--red);display:inline-block"></span>Risk</span>
         </div>
       </div>
-      <div class="mod-panel-body" style="padding:10px">
-        <canvas id="scNetworkCanvas" height="260"></canvas>
+      <div class="mod-panel-body" style="padding:8px">
+        <canvas id="scNetworkCanvas" height="340"></canvas>
       </div>
     </div>
     <div class="mod-panel">
@@ -10613,50 +10497,52 @@ function scRenderNetworkFromGroq(data) {
   const canvas = document.getElementById('scNetworkCanvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const W = canvas.offsetWidth || 500, H = 260;
+  const W = canvas.offsetWidth || 500, H = 340;
   canvas.width = W; canvas.height = H;
   ctx.clearRect(0,0,W,H);
-  const cx=W/2, cy=H/2-10, radius=Math.min(W,H)*0.37;
+  const cx=W/2, cy=H/2;
+  const n=Math.max(1,data.suppliers.length);
+  const radius=Math.min(W,H)*0.38;
   const sup = data.suppliers;
+  // Subtle ring
+  ctx.beginPath(); ctx.arc(cx,cy,radius,0,2*Math.PI);
+  ctx.strokeStyle='rgba(100,181,246,0.08)'; ctx.lineWidth=1; ctx.setLineDash([4,6]); ctx.stroke(); ctx.setLineDash([]);
+  // Edges
   sup.forEach((s,i)=>{
-    const angle=(2*Math.PI*i/sup.length)-Math.PI/2;
+    const angle=(2*Math.PI*i/n)-Math.PI/2;
     const x=cx+radius*Math.cos(angle), y=cy+radius*Math.sin(angle);
     const col=s.riskScore>=75?'#FF1744':s.riskScore>=45?'#FF6B00':'#00C853';
     ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(x,y);
-    ctx.strokeStyle=col+'55'; ctx.lineWidth=s.tier===1?1.8:0.9; ctx.stroke();
+    ctx.strokeStyle=col+'44'; ctx.lineWidth=s.tier===1?1.5:0.8; ctx.stroke();
   });
+  // Supplier nodes with label below
   sup.forEach((s,i)=>{
-    const angle=(2*Math.PI*i/sup.length)-Math.PI/2;
+    const angle=(2*Math.PI*i/n)-Math.PI/2;
     const x=cx+radius*Math.cos(angle), y=cy+radius*Math.sin(angle);
     const col=s.riskScore>=75?'#FF1744':s.riskScore>=45?'#FF6B00':'#00C853';
-    const r=s.tier===1?8:5;
+    const r=6;
     ctx.beginPath(); ctx.arc(x,y,r,0,2*Math.PI);
-    ctx.fillStyle=col+'33'; ctx.fill();
-    ctx.strokeStyle=col; ctx.lineWidth=1.5; ctx.stroke();
-    // Risk score badge on node
-    ctx.fillStyle=col; ctx.font='bold 7px JetBrains Mono,monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
-    ctx.fillText(s.riskScore, x, y);
-    ctx.textBaseline='alphabetic';
-    // Label
-    ctx.fillStyle='#e8e8f0'; ctx.font='9px JetBrains Mono,monospace'; ctx.textAlign='center';
-    const lx=cx+(radius+24)*Math.cos(angle), ly=cy+(radius+24)*Math.sin(angle);
-    const sn=s.name.length>12?s.name.slice(0,11)+'…':s.name;
+    ctx.fillStyle=col; ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.2)'; ctx.lineWidth=1; ctx.stroke();
+    // Label below node
+    ctx.fillStyle='#e8e8f0'; ctx.font='10px JetBrains Mono,monospace'; ctx.textAlign='center'; ctx.textBaseline='top';
+    const lx=x, ly=y+r+5;
+    const sn=s.name.length>14?s.name.slice(0,13)+'…':s.name;
     ctx.fillText(sn, lx, ly);
   });
   // Center
-  ctx.beginPath(); ctx.arc(cx,cy,20,0,2*Math.PI);
-  ctx.fillStyle='rgba(0,188,212,0.18)'; ctx.fill();
-  ctx.strokeStyle='#00BCD4'; ctx.lineWidth=2; ctx.stroke();
-  ctx.fillStyle='#00BCD4'; ctx.font='bold 9px JetBrains Mono,monospace';
+  ctx.beginPath(); ctx.arc(cx,cy,16,0,2*Math.PI);
+  ctx.fillStyle='rgba(0,188,212,0.12)'; ctx.fill();
+  ctx.strokeStyle='rgba(0,188,212,0.3)'; ctx.lineWidth=1.5; ctx.stroke();
+  ctx.fillStyle='rgba(0,188,212,0.7)'; ctx.font='bold 11px JetBrains Mono,monospace';
   ctx.textAlign='center'; ctx.textBaseline='middle';
-  ctx.fillText(scCurrentCo.length>8?scCurrentCo.slice(0,8):scCurrentCo, cx, cy);
-  ctx.textBaseline='alphabetic';
+  ctx.fillText(scCurrentCo.length>12?scCurrentCo.slice(0,11)+'…':scCurrentCo, cx, cy);
 }
 
 function scRenderAlertsFromGroq(data) {
   const el = document.getElementById('scAlertsList'); if (!el) return;
   const alerts = data.key_alerts || [];
-  if (!alerts.length) { el.innerHTML='<div style="font-size:11px;color:var(--muted);font-family:JetBrains Mono,monospace">No alerts generated.</div>'; return; }
+  if (!alerts.length) { el.innerHTML='<div style="font-size:13px;font-weight:600;color:var(--muted);font-family:JetBrains Mono,monospace">No alerts generated.</div>'; return; }
   el.innerHTML = alerts.map(a=>{
     const icon=a.severity==='high'?'🚨':a.severity==='medium'?'⚠️':'📌';
     return`<div class="sc-alert ${a.severity}"><div class="sc-alert-icon">${icon}</div><div><div class="sc-alert-text">${a.title}</div><div class="sc-alert-meta">${a.region} · ${a.detail}</div></div></div>`;
@@ -10700,25 +10586,25 @@ function scRenderDepTreeFromGroq(data) {
 function scRenderDisruptionFromGroq(data) {
   const el = document.getElementById('scDisruptionAnalysis'); if (!el) return;
   const scenarios = data.disruption_scenarios || [];
-  if (!scenarios.length) { el.innerHTML='<div style="font-size:11px;color:var(--muted)">No disruption scenarios generated.</div>'; return; }
+  if (!scenarios.length) { el.innerHTML='<div style="font-size:13px;font-weight:600;color:var(--muted)">No disruption scenarios generated.</div>'; return; }
   el.innerHTML = scenarios.map(s=>`
-    <div class="sc-alert high" style="flex-direction:column;gap:6px;margin-bottom:8px">
+    <div class="sc-alert high" style="flex-direction:column;gap:8px;margin-bottom:10px">
       <div style="display:flex;align-items:center;justify-content:space-between">
-        <span style="font-size:12px;font-weight:600;color:var(--red)">${s.supplier} disrupted</span>
-        <span style="font-size:9px;font-family:JetBrains Mono,monospace;color:var(--muted)">${s.region}</span>
+        <span style="font-size:14px;font-weight:700;color:var(--red)">${s.supplier} disrupted</span>
+        <span style="font-size:11px;font-weight:600;font-family:JetBrains Mono,monospace;color:var(--muted)">${s.region}</span>
       </div>
-      <div style="font-size:10px;color:var(--muted);font-family:'JetBrains Mono',monospace">${s.commodity}</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-        <div style="background:rgba(255,23,68,0.08);padding:6px 8px;border-radius:5px">
-          <div style="font-size:8px;color:var(--muted);font-family:JetBrains Mono,monospace">REVENUE IMPACT</div>
-          <div style="font-size:14px;font-weight:700;color:var(--red);font-family:JetBrains Mono,monospace">-${s.revenue_impact_pct}%</div>
+      <div style="font-size:12px;font-weight:600;color:var(--muted);font-family:'JetBrains Mono',monospace">${s.commodity}</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:rgba(255,23,68,0.08);padding:8px 10px;border-radius:6px">
+          <div style="font-size:9px;font-weight:700;color:var(--muted);font-family:JetBrains Mono,monospace">REVENUE IMPACT</div>
+          <div style="font-size:16px;font-weight:700;color:var(--red);font-family:JetBrains Mono,monospace">-${s.revenue_impact_pct}%</div>
         </div>
-        <div style="background:rgba(255,107,0,0.08);padding:6px 8px;border-radius:5px">
-          <div style="font-size:8px;color:var(--muted);font-family:JetBrains Mono,monospace">OPS IMPACT</div>
-          <div style="font-size:14px;font-weight:700;color:var(--saffron);font-family:JetBrains Mono,monospace">-${s.ops_impact_pct}%</div>
+        <div style="background:rgba(255,107,0,0.08);padding:8px 10px;border-radius:6px">
+          <div style="font-size:9px;font-weight:700;color:var(--muted);font-family:JetBrains Mono,monospace">OPS IMPACT</div>
+          <div style="font-size:16px;font-weight:700;color:var(--saffron);font-family:JetBrains Mono,monospace">-${s.ops_impact_pct}%</div>
         </div>
       </div>
-      <div style="font-size:10px;color:var(--muted);line-height:1.4">${s.cascade}</div>
+      <div style="font-size:12px;font-weight:600;color:var(--muted);line-height:1.5">${s.cascade}</div>
     </div>`).join('');
 }
 
@@ -10866,22 +10752,22 @@ function gSwitchTab(tab) {
   const listEl = document.getElementById('globeIndicesList');
   const heatEl = document.getElementById('globeHeatmapWrap');
   if (tab === 'list') {
-    if (listEl) listEl.style.display = '';
+      if (listEl) listEl.style.display = '';
     if (heatEl) heatEl.style.display = 'none';
   } else {
     if (listEl) listEl.style.display = 'none';
-    if (heatEl) { heatEl.style.display = 'block'; gRenderHeatmap(heatEl); }
+    if (heatEl) { heatEl.style.display = 'flex'; gRenderHeatmap(heatEl); }
   }
 }
 
 function gRenderHeatmap(container) {
   if (!container) return;
   const regions = [
-    { name:'🌏 Asia Pacific',         ids:['nifty50','sensex','niftybank','nikkei','topix','hsi','hscei','sse','szse','kospi','kosdaq','twse','asx200','nzx50','bse500','sgx','klci','sti','jci','psei','vni'] },
-    { name:'🌍 Europe',               ids:['ftse100','dax','cac40','smi','mib','ibex','eurostoxx','aex','omx','wse','bist100','moex'] },
-    { name:'🌎 Americas',             ids:['spx','djia','nasdaq','tsx','bovespa','merval','ipc','ipsa'] },
-    { name:'🕌 Middle East & Africa', ids:['tadawul','dfm','egx30','isx','qe','jse','nse_kenya','ngx'] },
+    { name:'🌏 Asia Pacific', ids:['nifty50','nikkei','shanghaicomp','kospi'] },
+    { name:'🌍 Europe',       ids:['ftse100','dax','cac40'] },
+    { name:'🌎 Americas',     ids:['spx'] },
   ];
+  const maxAbsPct = Math.max(0.01, ...GLOBE_INDICES.map(idx=>{const d=gData[idx.id]; return d?Math.abs(d.pct):0}));
   let html = '';
   for (const region of regions) {
     const items = GLOBE_INDICES.filter(x => region.ids.includes(x.id));
@@ -10890,22 +10776,27 @@ function gRenderHeatmap(container) {
       const d = gData[idx.id];
       const pct = d ? d.pct : null;
       const col = gColor(pct || 0);
-      const ba = pct === null ? '0.08' : Math.abs(pct) > 2 ? '0.28' : Math.abs(pct) > 0.5 ? '0.18' : '0.09';
-      const bg = pct === null ? 'rgba(100,181,246,0.08)' : pct > 0 ? `rgba(0,200,83,${ba})` : `rgba(255,23,68,${ba})`;
-      const bd = pct === null ? 'rgba(100,181,246,0.25)' : pct > 0 ? `rgba(0,200,83,${parseFloat(ba)*2})` : `rgba(255,23,68,${parseFloat(ba)*2})`;
-      return `<div style="background:${bg};border:1px solid ${bd};border-radius:6px;padding:8px 9px;cursor:pointer;transition:transform 0.15s"
-        onmouseover="gHoverIdx('${idx.id}');this.style.transform='scale(1.06)'"
+      const absPct = Math.abs(pct || 0);
+      const intensity = maxAbsPct > 0 ? Math.min(1, absPct / maxAbsPct) : 0;
+      const bg = pct === null ? 'rgba(100,181,246,0.08)' : pct > 0 ? `rgba(8,153,129,${0.08 + intensity * 0.35})` : `rgba(224,59,59,${0.08 + intensity * 0.35})`;
+      const bd = pct === null ? 'rgba(100,181,246,0.25)' : pct > 0 ? `rgba(8,153,129,${0.15 + intensity * 0.5})` : `rgba(224,59,59,${0.15 + intensity * 0.5})`;
+      return `<div style="background:${bg};border:1px solid ${bd};border-radius:10px;padding:14px 12px;cursor:pointer;transition:transform 0.2s;box-shadow:0 0 ${8+intensity*18}px ${col}44"
+        onmouseover="gHoverIdx('${idx.id}');this.style.transform='scale(1.05)'"
         onmouseout="gHoverIdx(null);this.style.transform='scale(1)'">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${idx.flag} ${idx.short}</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:${col};margin-top:2px">${pct!==null?(pct>=0?'+':'')+pct.toFixed(2)+'%':'—'}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${idx.flag} ${idx.name}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:900;color:${col};margin-top:6px">${pct!==null?(pct>=0?'+':'')+pct.toFixed(2)+'%':'—'}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--text);margin-top:3px">${gFmt(d.value,idx.base)}</div>
+        <div style="width:100%;height:4px;background:rgba(0,0,0,0.3);border-radius:2px;margin-top:8px;overflow:hidden">
+          <div style="height:100%;width:${intensity*100}%;background:${col};border-radius:2px;transition:width 0.3s"></div>
+        </div>
       </div>`;
     }).join('');
-    html += `<div style="margin-bottom:12px">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(100,181,246,0.7);margin-bottom:6px">${region.name}</div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px">${cells}</div>
+    html += `<div style="margin-bottom:16px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:1px;color:rgba(100,181,246,0.8);margin-bottom:8px">${region.name}</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">${cells}</div>
     </div>`;
   }
-  container.innerHTML = `<div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:2px;margin-bottom:10px">GLOBAL HEATMAP · 45+ INDICES</div>${html}`;
+  container.innerHTML = `<div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:2px;margin-bottom:10px">GLOBAL HEATMAP · REAL TIME</div>${html}`;
 }
 
 // Re-render globe heatmap on data update
@@ -10986,7 +10877,7 @@ async function mbFetch() {
     mbSetState('content');
 
     const ts = document.getElementById('mbLastUpdated');
-    if (ts) ts.textContent = new Date().toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit', timeZone:'Asia/Kolkata' }) + ' IST';
+    if (ts) ts.textContent = new Date().toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit', timeZone:'Asia/Kolkata' }).replace(' ','');
 
   } catch(e) {
     console.warn('[MB]', e.message);
@@ -11000,7 +10891,6 @@ function mbRender(d) {
   // Extract data from new unified dashboard response
   const breadth = d?.breadth || {};
   const pulse = d?.pulse || {};
-  const pcrData = d?.pcr || {};
   
   // ── Advance / Decline scorecard ─────────────────────────────
   const advances  = breadth?.advances  || 0;
@@ -11033,16 +10923,27 @@ function mbRender(d) {
     mb52Signal.style.color = net52 > 0 ? 'var(--green)' : net52 < 0 ? 'var(--red)' : 'var(--gold)';
   }
 
-  // ── PCR ──────────────────────────────────────────────────────
-  // FIXED: No fake fallback - show real data or N/A
-  const pcrVal = pcrData?.pcr ?? pcrData?.pcrValue ?? null;
-  const hasPcrData = pcrVal !== null && !isNaN(pcrVal);
-  const pcrNum = hasPcrData ? parseFloat(pcrVal) : null;
+  // ── PCR (sourced from FII/DII tracker data) ───────────────────
+  let pcrNum = null;
+  if (fiidiiData) {
+    const src = Array.isArray(fiidiiData) ? fiidiiData[0] : fiidiiData;
+    const pcrRaw = src?.pcr;
+    if (pcrRaw !== undefined && pcrRaw !== null && !isNaN(parseFloat(pcrRaw))) {
+      pcrNum = parseFloat(pcrRaw);
+    }
+  }
+  if (!pcrNum && fiidiiHomeData) {
+    const pcrRaw = fiidiiHomeData?.pcr;
+    if (pcrRaw !== undefined && pcrRaw !== null && !isNaN(parseFloat(pcrRaw))) {
+      pcrNum = parseFloat(pcrRaw);
+    }
+  }
+  const hasPcrData = pcrNum !== null;
   const mbPCR  = document.getElementById('mbPCR');
   const mbPCRLabel = document.getElementById('mbPCRLabel');
   const mbPCRBar   = document.getElementById('mbPCRBar');
   
-  if (hasPcrData && pcrNum !== null) {
+  if (hasPcrData) {
     const pcrColor   = pcrNum > 1.2 ? 'var(--green)' : pcrNum < 0.7 ? 'var(--red)' : 'var(--gold)';
     const pcrText    = pcrNum > 1.2 ? 'OVERSOLD — Contrarian Bullish' : pcrNum < 0.7 ? 'OVERBOUGHT — Contrarian Bearish' : 'NEUTRAL ZONE';
     if (mbPCR)      { mbPCR.textContent = pcrNum.toFixed(2); mbPCR.style.color = pcrColor; }
@@ -11352,7 +11253,7 @@ function fpiRender(raw, updatedAt) {
     </div>`).join('');
 
   const ua = document.getElementById('fpiUpdatedAt');
-  if (ua) ua.textContent = updatedAt + ' IST';
+  if (ua) ua.textContent = updatedAt;
   fpiSetState('content');
 }
 
@@ -11537,7 +11438,7 @@ function regimeRender(r) {
     badge.style.background = bg; badge.style.color = col; badge.style.borderColor = col + '40';
   }
   const ts = document.getElementById('regimeLastUpdate');
-  if (ts) ts.textContent = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'}) + ' IST';
+  if (ts) ts.textContent = new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'});
 
   const isB = ['TRENDING_BULL','BROAD_RALLY','MOMENTUM_EXPANSION','RISK_ON'].includes(r.regime);
   const isR = ['TRENDING_BEAR','BROAD_SELLING','RISK_OFF'].includes(r.regime);
@@ -11851,7 +11752,7 @@ function mfiCompute(d) {
     badge.style.background = finalScore > 60 ? 'rgba(255,23,68,0.12)' : finalScore > 40 ? 'rgba(255,215,0,0.1)' : 'rgba(0,200,83,0.1)';
   }
   const ts = document.getElementById('mfiLastUpdated');
-  if (ts) ts.textContent = new Date().toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit', timeZone:'Asia/Kolkata' }) + ' IST';
+  if (ts) ts.textContent = new Date().toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit', timeZone:'Asia/Kolkata' });
 }
 
 function mfiBuildSummary(p1, p2, p3, p4, p5, active, finalScore, trend) {
